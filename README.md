@@ -2,7 +2,12 @@
 ### 『Oneness』
 ## コンセプト/concept/ 
 #### ヨギーにのためのプラットフォーム/This app is for all yoga loves to be oneness 
-
+コロナ禍になり、ワークアウトの環境ですら大きな変化がありました。
+ヨガを愛する私もまたその1人です。
+このような状況で私が通っていたヨガスタジオもオンライに切り替わり、有難いことにヨガをする機会を見逃さなかったものの
+そこで何かsnsというツールを通して、繋がれるものが必要だと考えるようになりました。
+1人でヨガをしていては誰もポーズをみてくれない、1人で続けていくモチベーション、同じシークエンスを一緒にやって生まれるあのスタジオの空間を取り戻すことができます。
+また、オンラインになったこそ、ならではでポーズの写真や日記などで振り返る時間ができる、新しいヨガの様式を楽しむことができます。
 Since covid-19 our lives have been so much changes.
 It varies corona's lives depending on the country so some coutries are even difficult workout.
 I've been doing yoga , let's say "as a yoggy" more than 10 years. Even my yoga sutudio had to close during quarantine.
