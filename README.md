@@ -51,9 +51,9 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHHc9Q/edit?usp=sharing
 
 ## ER図
-<img src="public/images/ERmapping.png" alt=“ER図” width="650px">
+![ScreenShot](./public/images/ERmapping.png)
 
 ## 画面遷移図
-<img src="public/images/STDiagram.png" alt="画面遷移図" width="650px">
+![ScreenShot](./public/images/STDiagram.png)
 
 
