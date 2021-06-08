@@ -51,6 +51,7 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHHc9Q/edit?usp=sharing
 ## ER図/ER_diagram
 <img src=“./public/images/ER_diagram.png” alt=“ER図” width=‘650px’>
+
 ## 画面遷移図/Screen flow diagram
-<img src=“./public/images/Screen_flow_diagram.png” alt=“ER図” width=‘650px’>
+<img src=“./public/images/Screen_flow_diagram.png” alt=“画面遷移図” width=‘650px’>
 https://github.com/Lemon-29/oneness/edit/master/README.md
