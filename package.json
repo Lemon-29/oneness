@@ -1,5 +1,7 @@
 {
   "name": "oneness",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "4"
+  }
 }
