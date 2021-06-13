@@ -51,9 +51,10 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHHc9Q/edit?usp=sharing
 
 ## ER図
-![ScreenShot](./public/images/ERmapping.png)
+<img src="./public/images/ERmapping.png" alt=“ER図” width="650px">
+![Screen flow diagram](https://user-images.githubusercontent.com/77761510/121129975-aaa49980-c868-11eb-9885-f3f76a52c4bb.png)
 
 ## 画面遷移図
-![ScreenShot](./public/images/STDiagram.png)
-
+<img src="./public/images/STDiagram.pn" alt="画面遷移図" width="650px">
+![ERmapping](https://user-images.githubusercontent.com/77761510/121130281-269ee180-c869-11eb-92cf-4cfc9580086f.png)
 
