@@ -6,7 +6,8 @@
     <%= link_to '詳細', post_path(post.id) %>
     <%= link_to '編集', edit_post_path(post.id) %>
     <%= link_to '削除', post_path(post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %><br>
+    <%= link_to '詳細', post_path(post.id) %><br>
 <%end%>
 
 
-<%= link_to '🔙マイページ🔙', edit_user_registration_path(current_user.id) if current_user != nil%> 
+<%= link_to 'マイページ', edit_user_registration_path(current_user.id) if current_user != nil%> 
