@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'posts#index'
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
   resources :posts
+  resources :favorites, only: [:create, :destroy]
  end
 
