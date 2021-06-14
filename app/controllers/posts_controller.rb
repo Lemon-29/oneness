@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_post, only: [:edit, :update, :show]
   def index
     @posts  = Post.all
   end
@@ -20,18 +21,18 @@ class PostsController < ApplicationController
 
   def edit
   end
-  
-  private
-  def set_post
-    @post = Post.find(params[:id])
-  end
 
   def update
-    if @post.update(permitted_parameter)
+    if @post.update(post_params)
       redirect_to posts_path, notice: '編集しました！'
     else
       render :edit
     end
+  end
+
+  private
+  def set_post
+    @post = Post.find(params[:id])
   end
 
   def post_params

@@ -16,7 +16,7 @@
       <%= yield %>
     </div>
       <% if user_signed_in? %>
-        <%= link_to "post投稿", posts_path %>
+        <%= link_to "post投稿", new_post_path %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
       <% end %>
@@ -26,6 +26,6 @@
       <% if alert %>
         <p class="alert alert-error"><%= alert %></p>
     <% end %> 
-    
+
   </body>
 </html>
