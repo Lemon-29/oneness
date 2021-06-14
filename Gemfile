@@ -61,3 +61,4 @@ gem 'devise-i18n'
 
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
+gem 'cancancan'
