@@ -1,4 +1,4 @@
-<h1>Posts#index</h1>
+<h1>Let's post yoga pose</h1>
 <%= link_to '🧘‍♀️新しく写真を投稿する🧘‍♀️', new_post_path%><br>
 <% @posts.each do |post|%>
     <%= post.content%><br>
@@ -9,4 +9,4 @@
 <%end%>
 
 
-<%= link_to 'マイページ', edit_user_registration_path(current_user.id) if current_user != nil%> 
+<%= link_to '🔙マイページ🔙', edit_user_registration_path(current_user.id) if current_user != nil%> 
