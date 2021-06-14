@@ -50,6 +50,7 @@ gem 'kaminari', '~> 0.17.0'
 gem 'jquery-rails'
 gem 'ratyrate'
 gem "bulma-rails"
+gem 'rails_admin', '~> 2.0'
 
 # ログイン機能
 gem 'devise'
