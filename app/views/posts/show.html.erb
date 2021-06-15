@@ -12,14 +12,15 @@
 <p>
   <%= image_tag(@post.image.url) if @post.image.present? %>
 </p>
-<%= link_to '🖋 編集 🖋', edit_post_path(@post.id) %>
+<%= link_to '🖋 編集 ', edit_post_path(@post.id) %>
 <br>
-<%= link_to '🗑 削除 🗑', post_path(@post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
+<%= link_to '🗑 削除 ', post_path(@post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
+<br>
 <% unless @post.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to 'お気に入りを解除する', favorite_path(id: @favorite.id), method: :delete %>
+    <%= link_to ' 💔 お気に入り解除 ', favorite_path(id: @favorite.id), method: :deletep, class: 'btn-circle-border-double' %>
   <% else %>
-    <%= link_to 'お気に入りする', favorites_path(post_id: @post.id), method: :post %>
+    <%= link_to '❤️ お気に入り追加', favorites_path(post_id: @post.id), method: :post, class: 'btn-circle-border-double' %>
   <% end %>
 <% end %>
 <br>
