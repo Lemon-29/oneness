@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_06_15_161038) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
-    t.bigint "user_id"
+    t.string "image"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
