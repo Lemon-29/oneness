@@ -9,6 +9,18 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
   has_many :comments  #can take user's comments w/user.comments
-  # mount_uploader :image, ImageUploader
+  # mount_uploader :
+
+  def follow!(other_user) 
+    active_relationships.create!(followed_id: other_user.id)
+  end
+  
+  def following?(other_user)
+    active_relationships.find_by(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
 
 end

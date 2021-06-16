@@ -29,3 +29,11 @@
     <% end -%>
   <% end -%>
 </div>
+
+<h2>ユーザー</h2>
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <%= user.email %>
+    <%= render 'follow_form', user: user %>
+  <% end %>
+

@@ -1,13 +1,18 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show, :create]
   before_action :set_post, only: [:edit, :update, :show]
 
   def index
     @posts  = Post.all
+    # @posts = current_user.posts.all  #投稿一覧を表示させるために全取得
+    # current_user.posts.new   #投稿一覧画面で新規投稿を行うので、formのパラメータ用にPostオブジェクトを取得
   end
 
   def show
-    @favorite = current_user.favorites.find_by(post_id: @post.id)
+    # @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @post = Post.find(params[:id])
+    @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
+    @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
   end
 
   def new
@@ -48,6 +53,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :image, :image_cache, :user_id)
+    params.require(:post).permit(:content, :image, :image_cache, :user_id, :content)
   end
 end
