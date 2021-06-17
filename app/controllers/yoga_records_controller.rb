@@ -12,7 +12,7 @@ class YogaRecordsController < ApplicationController
   def create
     @yoga_record = YogaRecord.new(permitted_parameter)
     @yoga_record.usesr = current_user
-    if @yoga_record = diary.save
+    if @yoga_record.save
       redirect_to yoga_records_path, notice: "投稿しました！"
     else
       render :new
@@ -21,6 +21,6 @@ class YogaRecordsController < ApplicationController
 
   private
    def permitted_parameter
-    params.require(:horse_diary).permit(:content, :user_id)
+    params.require(:yoga_record).permit(:content, :user_id)
    end
 end

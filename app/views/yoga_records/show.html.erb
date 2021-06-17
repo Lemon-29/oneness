@@ -1,0 +1,8 @@
+
+<br>
+<%= safe_join(@yoga_record.content.split("\n"),tag(:br))%><br>
+<br>
+<%= link_to '編集', edit_horse_diary_path(@yoga_record.id) %>
+<%= link_to '削除', horse_diary_path(@yoga_record.id), method: :delete, data: {confirm: '投稿を削除してもよろしいでしょうか？'} %><br>
+<br>
+<%= link_to '戻る', yoga_records_path%>
