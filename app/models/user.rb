@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
   has_many :comments  #can take user's comments w/user.comments
+  has_many :yoga_records
   mount_uploader :image, ImageUploader
 
   def follow!(other_user) 
