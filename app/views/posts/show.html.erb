@@ -1,15 +1,17 @@
-<p2> 
-  <%= @post.user.name %> さんの投稿
-</p2> 
-
 <p id="notice"><%= notice %></p>
+<div class="profile_header-s">
+  <%= image_tag(@post.user.image.url, class: 'user_profile-s') if @post.user.image.present? %>
+  <div class="username-s">
+    <%= @post.user.name %> さんの投稿
+  </div>
+</div>
 </p>
   <%= @post.content %>
 </p>
 <p>
   <strong>Image:</strong>
-<p>
   <%= image_tag(@post.image.url) if @post.image.present? %>
+<p>
 </p>
 <%= link_to '🖋 編集 ', edit_post_path(@post.id) %>
 <br>

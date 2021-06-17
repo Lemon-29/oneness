@@ -4,13 +4,26 @@
 <br>
 <br>
 <%= link_to '🧘‍♀️新しく写真を投稿する🧘‍♀️', new_post_path%><br>
-<% @posts.each do |post|%>
-    <%= post.content%><br>
-    <%= image_tag(post.image.url) if post.image.present? %><br>
-    <%= link_to '詳細', post_path(post.id) %>
-    <%= link_to '編集', edit_post_path(post.id) %>
-    <%= link_to '削除', post_path(post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %><br>
-<%end%>
+<div class="posts-index_list">
+    <% @posts.each do |post|%>
+        <div class="posts-index_list">
+            <div class="profile_header-s">
+            <%= image_tag(post.user.image.url, class: 'user_profile-s') if post.user.image.present? %>
+            <div class="username-s">
+                <%= post.user.name %> さんの投稿
+            </div>
+            </div>
+            <div class="posts-index_row-content">
+                <%= post.content %>
+            </div>
+            <%= image_tag(post.image.url) if post.image.present? %>
+            <%= link_to '詳細', post_path(post.id) %>
+            <%= link_to '編集', edit_post_path(post.id) %>
+            <%= link_to '削除', post_path(post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %><br>
+            <div class="post-list-border"></div>
+        </div>
+    <% end %>
+</div>
 
 
 <%= link_to 'マイページ', edit_user_registration_path(current_user.id) if current_user != nil%> 
