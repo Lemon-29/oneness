@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  root 'posts#index'
+  root 'top#index'
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
   resources :posts do
     resources :comments
