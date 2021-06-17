@@ -1,4 +1,9 @@
 class FavoritesController < ApplicationController
+  def show
+    @favorites = current_user.favorites.all.order(created_at: :desc).page(params[:page]).per(3)
+    # @favorites = Favorite.all
+  end
+
   before_action :authenticate_user! 
   def create
     favorite = current_user.favorites.create(post_id: params[:post_id])
