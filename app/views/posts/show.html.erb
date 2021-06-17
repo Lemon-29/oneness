@@ -24,4 +24,15 @@
 <% end %>
 <br>
 
-<%= link_to '🔙 戻る', posts_path %>
+<div class="container">
+   <p id="notice"><%= notice %></p>
+   </div>
+   <p class = 'btn-border-bottom'><p>コメント一覧</p>
+   <div id="comments_area">
+     <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
+   </div>
+   <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+ </div>
+
+<%= link_to '🔙  (戻る)', posts_path %>
+<br>

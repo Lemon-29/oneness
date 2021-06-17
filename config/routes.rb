@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+  
   resources :favorites, only: [:create, :destroy, :show]
   resources :users, only: [:index] 
   resources :relationships, only: [:create, :destroy]

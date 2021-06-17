@@ -9,10 +9,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @favorite = current_user.favorites.find_by(post_id: @post.id)
-    @post = Post.find(params[:id])
-    @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
-    @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @comments = @post.comments
+    @comment = @post.comments.build
+    # @post = Post.find(params[:id])
+    # @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
+    # @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
   end
 
   def new
