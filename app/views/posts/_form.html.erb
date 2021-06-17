@@ -1,3 +1,18 @@
+<div>
+    <div>
+        user name:
+    </div>
+    <div>
+        <%= current_user.name %>
+    </div>
+    <div>
+        image:
+    </div>
+    <div>
+        <%= image_tag current_user.image.url if current_user && current_user.image && current_user.image.url  %>
+    </div>
+</div>
+
 <%= form_with(model: @post, local: true) do |f| %>
   <div class = "field">
       <%= f.label :投稿内容%><br>

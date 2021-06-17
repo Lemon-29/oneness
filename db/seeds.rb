@@ -6,14 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create!(
+user1 = User.find_by(
+  email: "lisa@gmail.com"
+) || User.create!(
   name: "lisa",
   email: "lisa@gmail.com",
   password: "lisa0106",
   admin: true,
 )
 
-#I'll customize on my own later :)
+# MEMO: I'll customize on my own later :)
 # post1_2 = Post.create!(
 #   title: "ゆっくりしませんか？",
 #   content: "動物たちが可愛い！！！",
