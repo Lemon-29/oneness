@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'yoga_records/index'
+  get 'yoga_records/new'
   get 'relationships/create'
   get 'relationships/destroy'
   get 'favorites/create'
