@@ -2,7 +2,7 @@ class RecordsController < ApplicationController
   before_action :which_deary?, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   def index
-    @records = Record.all
+    @records = current_user.records
   end
 
   def new

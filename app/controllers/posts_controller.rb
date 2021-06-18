@@ -4,8 +4,6 @@ class PostsController < ApplicationController
 
   def index
     @posts  = Post.all
-    # @posts = current_user.posts.all  #投稿一覧を表示させるために全取得
-    # current_user.posts.new   #投稿一覧画面で新規投稿を行うので、formのパラメータ用にPostオブジェクトを取得
   end
 
   def show
