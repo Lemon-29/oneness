@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "YogaRecords", type: :request do
+RSpec.describe "Records", type: :request do
   describe "GET /index" do
     it "returns http success" do
-      get "/yoga_records/index"
+      get "/records/index"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /new" do
     it "returns http success" do
-      get "/yoga_records/new"
+      get "/records/new"
       expect(response).to have_http_status(:success)
     end
   end

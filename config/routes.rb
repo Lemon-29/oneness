@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'yoga_records/index'
-  get 'yoga_records/new'
+  get 'records/index'
+  get 'records/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root 'top#index'

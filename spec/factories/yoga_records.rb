@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :yoga_record do
+  factory :record do
     text { "" }
   end
 end

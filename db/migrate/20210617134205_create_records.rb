@@ -1,9 +1,8 @@
-class CreateYogaRecords < ActiveRecord::Migration[5.2]
+class CreateRecords < ActiveRecord::Migration[5.2]
   def change
-    create_table :yoga_records do |t|
+    create_table :records do |t|
       t.text :content
       t.references :user, foreign_key: true
-      
       t.timestamps
     end
   end
