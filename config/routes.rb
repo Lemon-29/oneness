@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   get 'yoga_records/index'
   get 'yoga_records/new'
-  get 'relationships/create'
-  get 'relationships/destroy'
-  get 'favorites/create'
-  get 'favorites/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root 'top#index'
@@ -13,8 +9,10 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :favorites, only: [:create, :destroy, :show]
-  resources :users, only: [:index] 
+  resources :favorites, only: [:create, :destroy]
+  resources :users, only: [:index] do 
+    resources :favorites, only: [:index]
+  end
   resources :relationships, only: [:create, :destroy]
  end
 

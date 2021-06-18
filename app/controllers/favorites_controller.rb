@@ -1,10 +1,11 @@
 class FavoritesController < ApplicationController
-  def show
+  before_action :set_user, only: [:index]
+  def index
     @favorites = current_user.favorites.all.order(created_at: :desc).page(params[:page]).per(3)
-    # @favorites = Favorite.all
+    @posts = @favorites.map(&:post)
   end
 
-  before_action :authenticate_user! 
+  before_action :authenticate_user!
   def create
     favorite = current_user.favorites.create(post_id: params[:post_id])
     redirect_to post_path(params[:post_id]),notice: 'お気に入りに追加しました！'
@@ -17,7 +18,8 @@ class FavoritesController < ApplicationController
     redirect_to posts_path,notice: 'お気に入りを解除しました！'
   end
 
-  def show
-    @favorite = current_user.favorites.find_by(post_id: @post.id)
+  private
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
