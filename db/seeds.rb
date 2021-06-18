@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user1 = User.find_by(
-  email: "lisa@gmail.com"
+  email: "admin@gmail.com"
 ) || User.create!(
-  name: "lisa",
-  email: "lisa@gmail.com",
+  name: "admin",
+  email: "admin@gmail.com",
   password: "lisa0106",
   admin: true,
 )
