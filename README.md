@@ -16,7 +16,7 @@ My yoga teacher has created online yoga studio immediately. Lucky for me I didn'
 At the biggining of onlin studio, I felt a little bit wired because basically doing yoga with friends , teacher but doing yoga at my apartment by myself is kinda lonly and I felt isolated from the world. Sounds like over reacted but truth is it does.
 Tha't why I've been thinkig I wanna make something to connect all yoga loves.
 So when you do yoga  by yourself , No one can see your yoga and feelings so Best Yoga App For All Levels here.
-You can connct your favorite ppl, yoga pose and post your dialy, don'
+You can connct your favorite ppl, post your yoga posea and write your daily dialy as well don't need to feel lonly anymore! Let's get started!!
 ## バージョン/version
 * Ruby2.6.5
 * Rails5.2.5
