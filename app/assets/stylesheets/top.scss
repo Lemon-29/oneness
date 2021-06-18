@@ -39,22 +39,22 @@
 /* --- 段差で背景画像のアニメーションを実行 ----------------- */
 .box .src1 {
   background-image : url('top-page1.jpeg');   /* 背景の画像を指定 */
-  background-position: center;
+  background-position: 50% 50%;
 }
 .box .src2 {
   background-image : url('top-page2.jpeg');   /* 背景の画像を指定 */
   animation-delay  : 5s;
-  background-position: center;
+  background-position: 100% 45%;
 }
 .box .src3 {
   background-image : url('top-page3.jpeg');   /* 背景の画像を指定 */
   animation-delay  : 10s;
-  background-position: center;
+  background-position: 100% 100%;
 }
 .box .src4 {
   background-image : url('top-page4.jpeg');   /* 背景の画像を指定 */
   animation-delay  : 15s;
-  background-position: center;
+  background-position: 100% 100%;
 }
 
 @keyframes bgAnime {
