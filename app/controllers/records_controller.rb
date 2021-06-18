@@ -6,12 +6,11 @@ class RecordsController < ApplicationController
   end
 
   def new
-    @record = Record.all
+    @record = Record.new
   end
 
   def create
     @record = Record.new(permitted_parameter)
-    @record.usesr = current_user
     if @record.save
       redirect_to records_path, notice: "投稿しました！"
     else
@@ -21,6 +20,6 @@ class RecordsController < ApplicationController
 
   private
    def permitted_parameter
-    params.require(:record).permit(:content, :user_id)
+    params.require(:record).permit(:content).merge(user_id: current_user.id)
    end
 end
