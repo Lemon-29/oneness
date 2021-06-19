@@ -21,4 +21,13 @@
     overflow: scroll;
     padding-top: 30px;
   }
+  &_body {
+    position: relative;
+    background-color: white;
+    width: calc(100% - 220px);
+    height: calc(100vh - 65px);
+    margin-left: 220px;
+    overflow: scroll;
+    padding: 30px;
+  }
 }
