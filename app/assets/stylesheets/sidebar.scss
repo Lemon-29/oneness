@@ -44,7 +44,7 @@
   width: 100%;
   height: calc(100% - 30px);
   color: whitesmoke;
-  background-color:pink;
+  background-color: transparent;
   z-index: 10;
   @media screen and (max-width: 600px) {
     display: none;
@@ -56,42 +56,36 @@
 }
 
 .listings_channels {
-  margin: 1rem 0 2rem;
 }
 
 .listings_header {
   text-align: center;
-  // font-size: 10%;
-  line-height: 1.25rem;
   text-transform: uppercase;
   font-weight: 700;
-  color:black;
+  color:gray;
   width: 100%;
   position: relative;
+  font-size: 22px;
 }
 
 .channel_list {
   padding: 0;
   list-style-type: none;
   text-align: left;
-  color: #010101;
+  color: rgb(100, 100, 100);
   position: sticky;
-
 }
 
 .channel {
-  height: 24px;
-  line-height: 24px;
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-  padding-right: 17px;
+  height: 44px;
   color: #ffffff;
-  padding-left: 1rem;
+  padding: 7px 16px;
   a {
-    color: rgb(0, 0, 0);
+    color: rgb(100, 100, 100);
     text-decoration: none;
     width: 100%;
     display: inline-block;
+    font-size: 18px;
   }
   a:hover {
     color: rgb(255, 184, 184);
@@ -99,5 +93,5 @@
 }
 
 .channel.active {
-  background:whitesmoke;
+  background:rgba(0, 0, 0, 0.1);
 }

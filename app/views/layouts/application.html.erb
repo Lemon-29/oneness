@@ -13,6 +13,7 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="layouts-appliocation">
+      <% if should_sidebar? %>
       <div class="layouts-appliocation_sidebar">
         <%= render'application/sidebar' if should_sidebar? %>
       </div>
@@ -29,7 +30,10 @@
           <p class="alert alert-error"><%= alert %></p>
         <% end %> 
         <%= yield %>
-      </div>
+        </div>
+      <% else %>
+        <%= yield %>
+      <% end %>
     </div>
   </body>
 </html>

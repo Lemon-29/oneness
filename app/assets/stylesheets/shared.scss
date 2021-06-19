@@ -4,13 +4,14 @@
   width: 100%;
   z-index: 2020;
   background: #ffff;
+  box-shadow: 0 2px 4px rgba(200, 200, 200, 10%);
 }
 
 .layouts-appliocation {
   margin-top: 65px;;
   position: relative;
   &_sidebar {
-    background-color: pink;
+    background-color: white;
     width: 220px;
     height: calc(100vh - 65px);
     position: absolute;
@@ -23,11 +24,15 @@
   }
   &_body {
     position: relative;
-    background-color: white;
+    background-color: #f9f9f9;
     width: calc(100% - 220px);
     height: calc(100vh - 65px);
     margin-left: 220px;
     overflow: scroll;
     padding: 30px;
   }
+}
+
+.form-group {
+  max-width: 650px;
 }
