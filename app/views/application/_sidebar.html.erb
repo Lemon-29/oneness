@@ -1,0 +1,25 @@
+<div class="listings">
+  <div class="listings_channels">
+    <h2 class="listings_header">■Menu■</h2>
+    <ul class="channel_list">
+    <br>
+    <br>
+      <li><%= sidebar_link_item('HOME', posts_path) %></li>
+    <br>
+    <br>
+      <li><%= sidebar_link_item('NewPost', new_post_path) %></li>
+    <br>
+    <br>
+      <li><%= sidebar_link_item('Comments list', root_path) %></li>
+    <br>
+    <br>
+      <li><%= sidebar_link_item('Bookmark', user_favorites_path(user_id: current_user.id)) %></li>
+    <br>
+    <br>
+      <li><%= sidebar_link_item('My profile', edit_user_registration_path) %></li>
+    <br>
+    <li><%= sidebar_link_item('White diary', new_record_path) %></li>
+    <br>
+    </ul>
+  </div>
+</div>

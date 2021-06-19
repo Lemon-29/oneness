@@ -2,7 +2,7 @@
 <br>
 <%= safe_join(@record.content.split("\n"),tag(:br))%><br>
 <br>
-<%= link_to '編集', edit_horse_diary_path(@record.id) %>
-<%= link_to '削除', horse_diary_path(@record.id), method: :delete, data: {confirm: '投稿を削除してもよろしいでしょうか？'} %><br>
+<%= link_to '編集', edit_record_path(@record.id) %>
+<%= link_to '削除', record_path(@record.id), method: :delete, data: {confirm: '投稿を削除してもよろしいでしょうか？'} %><br>
 <br>
 <%= link_to '戻る', records_path%>
