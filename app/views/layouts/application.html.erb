@@ -12,19 +12,22 @@
 
   <body>
     <%= render 'layouts/header' %>
-      <%= render'application/sidebar' unless request.env['PATH_INFO'] == root_path %>
-      <%= yield %>
-      <% if user_signed_in? %>
-        <%= link_to "post投稿", new_post_path %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      <% else %>
-      <% end %>
-      <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-    <% end %> 
-
+      <div class="layouts-appliocation_sidebar">
+        <%= render'application/sidebar' if should_sidebar? %>
+      </div>
+      <div class="layouts-appliocation_body">
+        <% if user_signed_in? %>
+          <%= link_to "post投稿", new_post_path %>
+          <%= link_to "新しくヨガ日記を書く", new_record_path, class: 'btn-border-bottom'  %>
+        <% else %>
+        <% end %>
+        <% if notice %>
+          <p class="alert alert-notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-error"><%= alert %></p>
+        <% end %> 
+        <%= yield %>
+      </div>
   </body>
 </html>

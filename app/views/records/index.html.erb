@@ -1,21 +1,18 @@
-<%= link_to "新しくヨガ日記を書く", new_record_path, class: 'btn-border-bottom'  %>
-
-<% @records.each do |record|%>
-  <div class = "box11" >
-    <% if record.content.length >= 25 %>
-      <% text = record.content %>
-      <% text = text.slice(0..25) %>
-      <% text += "..." %>
-      <%= link_to (text), new_record_path(record.id) %>
-    <% else %> 
-      <%= link_to (record.content), new_record_path(record.id) %>
-    <% end %>
-  </div>
-  <br>
-  <%#= link_to '詳細', record_path(record.id) %>
-  <%#= link_to '編集', edit_record_path(record.id) %>
-  <%= link_to '削除', record_path(record.id), method: :delete
-<%end%>
-
-<%= link_to 'マイページ', edit_user_registration_path(current_user.id) if current_user != nil%>
+<div>
+  <% @records.each do |record|%>
+    <div class = "box11" >
+      <% if record.content.length >= 25 %>
+        <% text = record.content %>
+        <% text = text.slice(0..25) %>
+        <% text += "..." %>
+        <%= link_to (text), new_record_path(record.id) %>
+      <% else %> 
+        <%= link_to (record.content), new_record_path(record.id) %>
+      <% end %>
+    </div>
+    <br>
+    <%#= link_to '詳細', record_path(record.id) %>
+    <%#= link_to '編集', edit_record_path(record.id) %>
+    <%= link_to '削除', record_path(record.id), method: :delete %>
+  <%end%>
 </div>

@@ -7,4 +7,11 @@ module ApplicationHelper
       link_to name, path, class: 'channel_name'
     end
   end
+  
+  def should_sidebar?
+    request.env['PATH_INFO'] != root_path &&
+    request.env['PATH_INFO'] != new_user_session_path &&
+    request.env['PATH_INFO'] != user_session_path &&
+    request.env['PATH_INFO'] != new_user_registration_path
+  end
 end
