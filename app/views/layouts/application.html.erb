@@ -12,6 +12,7 @@
 
   <body>
     <%= render 'layouts/header' %>
+      <%= render'application/sidebar' unless request.env['PATH_INFO'] == root_path %>
       <%= yield %>
       <% if user_signed_in? %>
         <%= link_to "post投稿", new_post_path %>
