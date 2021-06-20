@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_06_17_134205) do
     t.string "content"
     t.bigint "user_id"
     t.bigint "post_id"
-    t.integer "rate", default: 0, null: false
+    t.float "rate", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
