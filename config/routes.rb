@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   get 'records/index'
   get 'records/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

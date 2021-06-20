@@ -4,7 +4,6 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.string :content
       t.references :user, foreign_key: true
       t.references :post, foreign_key: true
-      t.integer :rate, null: false, default: 0
 
       t.timestamps
     end

@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :comments  #can take user's comments w/user.comments
   has_many :records
   mount_uploader :image, ImageUploader
+  ratyrate_rater
 
   def follow!(other_user) 
     active_relationships.create!(followed_id: other_user.id)
