@@ -1,8 +1,6 @@
 <div class="posts-index_list-item" id=<%= "posts-index_list-#{post.id}" %>>
     <div class="posts-index_list-item_left">
-        <% if post.user.image.present? %>
-            <div class="posts-index_list-item_left-image" style="background-image: url(<%= post.user.image.url %>)"></div>
-        <% end %>
+        <div class="posts-index_list-item_left-image" style="background-image: url(<%= post.image.url %>)"></div>
     </div>
     <div class="posts-index_list-item_right">
         <div class="posts-index_list-item_right-date">
