@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
+      flash.now['alert'] = @post.error_message_list("次の理由で投稿できませんでした")
       render :new
     end
   end

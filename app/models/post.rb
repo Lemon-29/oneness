@@ -4,6 +4,9 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites
 
+  validates :content, presence: true, length: { minimum: 1, maximum: 1000 }
+  validates :image, presence: true
+
   def avg_score
     total = 0
     self.comments.each do |comment|
