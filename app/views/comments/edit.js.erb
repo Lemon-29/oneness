@@ -1,2 +1,9 @@
 $("#this_comment_<%= @comment.id %>").replaceWith("<%= j render 'comments/edit', post: @post, comment: @comment %>");
 $("#notice").html("<%= j flash[:notice] %>");
+
+window.showHalfScoresWithSelector('.comments-edit', 'form .comments-form_score .app-score', {
+  starOff: window.starOffPath,
+  starOn : window.starOnPath,
+  starHalf: window.starHalfPath,
+  size: 25,
+});
