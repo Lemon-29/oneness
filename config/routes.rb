@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'records/index'
-  get 'records/new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   root 'top#index'
@@ -10,11 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:create, :destroy]
-  resources :users, only: [:index] do 
+  resources :users, only: [:index] do
     resources :favorites, only: [:index]
     resources :posts, only: [:index], controller: 'users/posts'
   end
   resources :relationships, only: [:create, :destroy]
-  resources :records
  end
 

@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "RAILS SERVER DEVELOPMENT",
+      "type": "Ruby",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "program": "${workspaceRoot}/bin/rails",
+      "pathToRDebugIDE": "/Users/Lisa/.rbenv/versions/2.6.5/bin/rdebug-ide",
+      "args": [
+        "server"
+      ]
+    }
+  ]
+}
