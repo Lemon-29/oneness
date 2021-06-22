@@ -47,6 +47,6 @@ class CommentsController < ApplicationController
   end
 
   def permitted_parameter
-    params.require(:comment).permit(:post_id, :content).merge(user_id: current_user.id)
+    params.require(:comment).permit(:post_id, :content, :score).merge(user_id: current_user.id)
   end
 end

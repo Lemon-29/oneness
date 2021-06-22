@@ -4,11 +4,11 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites
 
-  def avg_rate
+  def avg_score
     total = 0
     avg = 0
     self.comments.each do |comment|
-      total += comment.rate
+      total += comment.score
     end
     avg / self.comments.length
   end

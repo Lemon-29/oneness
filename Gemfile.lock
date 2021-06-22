@@ -348,7 +348,6 @@ DEPENDENCIES
   factory_bot_rails
   faker
   jbuilder (~> 2.5)
-  jquery-rails
   kaminari (~> 0.17.0)
   launchy
   letter_opener_web

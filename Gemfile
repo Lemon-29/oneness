@@ -47,7 +47,6 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'ransack'
 gem 'kaminari', '~> 0.17.0'
-gem 'jquery-rails'
 gem 'ratyrate'
 gem "bulma-rails"
 gem 'rails_admin', '~> 2.0'
@@ -60,5 +59,4 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise-i18n'
 
 gem 'bootstrap', '~> 4.5'
-gem 'jquery-rails'
 gem 'cancancan'

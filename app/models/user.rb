@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :records
   mount_uploader :image, ImageUploader
 
-  def follow!(other_user) 
+  def follow!(other_user)
     active_relationships.create!(followed_id: other_user.id)
   end
   
