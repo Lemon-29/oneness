@@ -36,4 +36,19 @@
       <% end %>
     </div>
   </body>
+  <script>
+      window.showReadonlyHalfScores({
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        size: 25,
+      });
+      window.showHalfScores({
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        scoreName: 'comment[score]',
+        size: 25,
+      });
+    </script>
 </html>

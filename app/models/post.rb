@@ -6,10 +6,9 @@ class Post < ApplicationRecord
 
   def avg_score
     total = 0
-    avg = 0
     self.comments.each do |comment|
       total += comment.score
     end
-    avg / self.comments.length
+    total / self.comments.length
   end
 end
