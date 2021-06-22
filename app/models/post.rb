@@ -9,9 +9,9 @@ class Post < ApplicationRecord
 
   def avg_score
     total = 0
-    self.comments.each do |comment|
+    self.comments.select(&:id).each do |comment|
       total += comment.score
     end
-    self.comments.length == 0 ? 0 : total / self.comments.length
+    self.comments.select(&:id).length == 0 ? 0 : total / self.comments.select(&:id).length
   end
 end

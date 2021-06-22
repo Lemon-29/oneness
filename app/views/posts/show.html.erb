@@ -1,5 +1,4 @@
 <div class="posts-show">
-  <p id="notice"><%= notice %></p>
   <div class="profile_header-s">
     <%= image_tag(@post.user.image.url, class: 'user_profile-s') if @post.user.image.present? %>
     <div class="username-s">
@@ -29,7 +28,6 @@
   <br>
 
   <div class="container">
-    <p id="notice"><%= notice %></p>
     </div>
     <p class = 'btn-border-bottom'>
     <p>🗒 コメント一覧</p>

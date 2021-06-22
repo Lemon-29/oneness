@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
-        format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
+        format.html { redirect_to post_path(@post), notice: @comment.error_message_list("次の理由で投稿できませんでした") }
       end
     end
   end
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
         flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
       else
-        flash.now[:notice] = 'コメントの編集に失敗しました'
+        flash.now[:notice] = @comment.error_message_list("次の理由で更新できませんでした")
         format.js {render :edit_error}
       end
     end
