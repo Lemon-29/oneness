@@ -9,6 +9,6 @@ class Post < ApplicationRecord
     self.comments.each do |comment|
       total += comment.score
     end
-    total / self.comments.length
+    self.comments.length == 0 ? 0 : total / self.comments.length
   end
 end

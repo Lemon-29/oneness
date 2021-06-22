@@ -18,6 +18,10 @@
                     <%= post.content %>
                 </div>
                 <%= image_tag(post.image.url) if post.image.present? %>
+                <p>コメント数</p>
+                <p><%= post.comments.length %>件</p>
+                <div>平均レビュー数</div>
+                <div class="app-score_readonly" data-score=<%= "#{post.avg_score}" %>></div>
                 <%= link_to '詳細', post_path(post.id) %>
                 <%= link_to '編集', edit_post_path(post.id) %>
                 <%= link_to '削除', post_path(post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %><br>
