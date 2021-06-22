@@ -1,36 +1,9 @@
 <div class="posts-index">
-    <div class="pics">＿/＿/＿/写真一覧画面＿/＿/＿/</div>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="pics">写真一覧画面</div>
     <%= link_to '🧘‍♀️新しく写真を投稿する🧘‍♀️', new_post_path%><br>
     <div class="posts-index_list">
-        <% @posts.each do |post|%>
-            <div class="posts-index_list">
-                <div class="profile_header-s">
-                <%= image_tag(post.user.image.url, class: 'user_profile-s') if post.user.image.present? %>
-                <div class="username-s">
-                    <%= post.user.name %> さんの投稿
-                </div>
-                </div>
-                <div class="posts-index_row-content">
-                    <%= post.content %>
-                </div>
-                <%= image_tag(post.image.url) if post.image.present? %>
-                <p>コメント数</p>
-                <p><%= post.comments.length %>件</p>
-                <div>平均レビュー数</div>
-                <div class="app-score_readonly" data-score=<%= "#{post.avg_score}" %>></div>
-                <%= link_to '詳細', post_path(post.id) %>
-                <%= link_to '編集', edit_post_path(post.id) %>
-                <%= link_to '削除', post_path(post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %><br>
-                <div class="post-list-border"></div>
-            </div>
-        <% end %>
+        <%= render @posts %>
     </div>
-
-
     <%= link_to 'マイページ', edit_user_registration_path(current_user.id) if current_user != nil%>
 </div>
 
