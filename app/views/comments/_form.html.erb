@@ -16,7 +16,7 @@
     </div>
     <div class="field form_point comments-form_score">
       <%= form.label :score %>
-      <div class="comments-form_score app-score" data-score="3" data-score-name="comment[score]" ></div>
+      <div class="comments-form_score app-score" data-score=<%= "#{comment.score}" %> data-score-name="comment[score]" ></div>
     </div>
     <div class="actions">
       <%= form.submit %>
