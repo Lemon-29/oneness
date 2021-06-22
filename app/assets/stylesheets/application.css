@@ -38,3 +38,8 @@
 .mw-xl {
   max-width: 1200px;
 }
+
+
+a:hover {
+  color: rgb(255, 184, 184);
+  }
