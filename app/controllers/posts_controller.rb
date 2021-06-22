@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: [:edit, :update, :show]
+  before_action :set_post, only: [:edit, :update, :show, :destroy]
+  before_action :check_sender, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.includes(:comments).all
@@ -10,9 +11,6 @@ class PostsController < ApplicationController
     @favorite = current_user.favorites.find_by(post_id: @post.id)
     @comments = @post.comments
     @comment = @post.comments.build
-    # @post = Post.find(params[:id])
-    # @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
-    # @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
   end
 
   def new
@@ -20,8 +18,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @post = Post.new(post_params)
-    # @post.user_id = current_user.id
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to posts_path
@@ -53,6 +49,10 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :image, :image_cache, :user_id, :content)
+    params.require(:post).permit(:content, :image, :image_cache, :content).merge(user_id: current_user.id)
+  end
+
+  def check_sender
+    redirect_to posts_path, alert: 'アクセス権限がありません' if @post.user_id != current_user.id
   end
 end
