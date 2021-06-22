@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'top#index'
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
+  post '/users/admin_sign_in', to: 'users#admin_sign_in'
   resources :posts do
     resources :comments
   end
