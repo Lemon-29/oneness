@@ -1,0 +1,17 @@
+@import "bootstrap";
+
+.notice {
+  display: flex;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+a:hover {
+  color: rgb(255, 184, 184);
+}
