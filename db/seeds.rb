@@ -13,7 +13,7 @@ user1 = User.find_by(
   email: "admin@gmail.com",
   password: "admin1234",
   admin: true,
-  image: File.open("admin.jpg"),
+  image: File.open("./app/assets/images/admin.jpg"),
 )
 
 user2 = User.find_by(
@@ -22,7 +22,7 @@ user2 = User.find_by(
   name: "saaya",
   email: "saaya@gmail.com",
   password: "saaya1234",
-  image: File.open("saaya.jpg"),
+  image: File.open("./app/assets/images/saaya.jpg"),
 )
 
 user3 = User.find_by(
@@ -31,7 +31,7 @@ user3 = User.find_by(
   name: "may",
   email: "may@gmail.com",
   password: "may1234",
-  image: File.open("may.jpg"),
+  image: File.open("./app/assets/images/may.jpg"),
 )
 
 user4 = User.find_by(
@@ -40,7 +40,7 @@ user4 = User.find_by(
   name: "juri",
   email: "juri@gmail.com",
   password: "juri1234",
-  image: File.open("juri.jpg"),
+  image: File.open("./app/assets/images/juri.jpg"),
 )
 
 
@@ -50,60 +50,60 @@ user5 = User.find_by(
   name: "lisa",
   email: "lisa@gmail.com",
   password: "lisa1234",
-  image: File.open("lisa.jpg"),
+  image: File.open("./app/assets/images/lisa.jpg"),
 )
 
 #------------
 
 post1_1 = Post.create!(
   content: "morning yoga w/sunrise. feels so good!",
-  image: File.open("pose1-1.jpg"),
+  image: File.open("./app/assets/images/pose1-1.jpg"),
   user_id: user1.id,
 )
 post1_2 = Post.create!(
   content: "fucus on just one point",
-  image: File.open("pose1-2.jpg"),
+  image: File.open("./app/assets/images/pose1-2.jpg"),
   user_id: user1.id,
 )
 
 post2_1 = Post.create!(
   content: "so much relaxing",
-  image: File.open("pose3-1.jpg"),
+  image: File.open("./app/assets/images/pose3-1.jpg"),
   user_id: user3.id,
 )
 post2_2 = Post.create!(
   content: "what a beautiful day",
-  image: File.open("pose3-2.jpg"),
+  image: File.open("./app/assets/images/pose3-2.jpg"),
   user_id: user3.id,
 )
 post3_1 = Post.create!(
   content: "omg i love my shadow. so beautiful isn't it?",
-  image: File.open("pose4-1.jpg"),
+  image: File.open("./app/assets/images/pose4-1.jpg"),
   user_id: user4.id,
 )
 post3_2 = Post.create!(
   content: "love doing yoga at beach",
-  image: File.open("pose4-2.jpg"),
+  image: File.open("./app/assets/images/pose4-2.jpg"),
   user_id: user4.id,
 )
 post4_1 = Post.create!(
   content: "flying Pigeon. finally i did it!",
-  image: File.open("pose4-1.jpg"),
+  image: File.open("./app/assets/images/pose4-1.jpg"),
   user_id: user4.id,
 )
 post4_2 = Post.create!(
   content: "look at the sky. let's do yoga.",
-  image: File.open("pose4-2.jpg"),
+  image: File.open("./app/assets/images/pose4-2.jpg"),
   user_id: user4.id,
 )
 post5_1 = Post.create!(
   content: "can you find the cressent moon over me?",
-  image: File.open("pose5-1.jpg"),
+  image: File.open("./app/assets/images/pose5-1.jpg"),
   user_id: user5.id,
 )
-post5-2 = Post.create!(
+post5_2 = Post.create!(
   content: "headstand. I've been paracticed every single day",
-  image: File.open("pose5-2.jpg"),
+  image: File.open("./app/assets/images/pose5-2.jpg"),
   user_id: user5.id,
 )
 
