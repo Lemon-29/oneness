@@ -22,6 +22,7 @@
       <%= f.label :'📷  画像を選択する'%><br>
       <%= f.file_field :image %>
   </div>
+  <%= image_tag(@post.image.url) if @post.image.present? %>
   <div>
       <%= f.submit %>
   </div>

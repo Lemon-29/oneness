@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :check_sender, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.includes(:comments).all
+    @posts = Post.includes(:comments).all.order(created_at: :desc)
   end
 
   def show
@@ -34,6 +34,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to posts_path, notice: '編集しました！'
     else
+      flash.now['alert'] = @post.error_message_list("次の理由で投稿できませんでした")
       render :edit
     end
   end
