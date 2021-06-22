@@ -28,16 +28,19 @@
     </div>
   </body>
   <script>
+      window.starOffPath = '<%= asset_path('star-off.png') %>'
+      window.starOnPath = '<%= asset_path('star-on.png') %>'
+      window.starHalfPath = '<%= asset_path('star-half.png') %>'
       window.showReadonlyHalfScores({
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
+        starOff: window.starOffPath,
+        starOn : window.starOnPath,
+        starHalf: window.starHalfPath,
         size: 25,
       });
       window.showHalfScores({
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        starHalf: '<%= asset_path('star-half.png') %>',
+        starOff: window.starOffPath,
+        starOn : window.starOnPath,
+        starHalf: window.starHalfPath,
         scoreName: 'comment[score]',
         size: 25,
       });

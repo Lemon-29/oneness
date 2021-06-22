@@ -1,3 +1,10 @@
 $("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.post.comments, post: @comment.post }) %>");
 $("textarea").val('');
 $("#notice").html("<%= j flash[:notice] %>");
+
+window.showReadonlyHalfScoresWithSelector('.comments-index', '.comment-content .app-score_readonly', {
+  starOff: window.starOffPath,
+  starOn : window.starOnPath,
+  starHalf: window.starHalfPath,
+  size: 25,
+});
