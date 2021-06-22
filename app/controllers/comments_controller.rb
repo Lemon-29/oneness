@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :check_sender, only: [:edit, :update, :destroy]
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(permitted_parameter)
@@ -34,7 +37,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
     @comment.destroy
     respond_to do |format|
       flash.now[:notice] = "コメントが削除されました"
@@ -46,7 +48,15 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
   def permitted_parameter
     params.require(:comment).permit(:post_id, :content, :score).merge(user_id: current_user.id)
+  end
+
+  def check_sender
+    redirect_to post_path(id: @post.id), alert: 'アクセス権限がありません' if @comment.user_id != current_user.id
   end
 end
