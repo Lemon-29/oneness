@@ -32,7 +32,7 @@ You can connct your favorite ppl, post your yoga posea and write your daily dial
 * ゲストログイン機能
 * フォロー機能
 * 管理者権限機能
-* game検索機能
+* rating (評価機能）
 * Heroku
 ## 実行手順/how to proceed
 ````
