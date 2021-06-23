@@ -1,25 +1,25 @@
 FactoryBot.define do
   factory :favorite do
     association :post, factory: :post
-    association :user, factory: :user
+    user_id { (User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)).id }
     created_at { "2021-06-14 22:28:32" }
     updated_at { "2021-06-14 22:28:32" }
   end
-  factory :favorite2 do
+  factory :favorite2, class: 'Favorite' do
     association :post2, factory: :post2
-    association :user, factory: :user
+    user_id { (User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)).id }
     created_at { "2021-06-14 22:28:32" }
     updated_at { "2021-06-14 22:28:32" }
   end
-  factory :favorite3 do
+  factory :favorite3, class: 'Favorite' do
     association :post, factory: :post
-    association :user, factory: :admin_user
+    user_id { (User.find_by(email: FactoryBot.build(:admin_user).email) || FactoryBot.create(:admin_user)).id }
     created_at { "2021-06-14 22:28:32" }
     updated_at { "2021-06-14 22:28:32" }
   end
-  factory :favorite4 do
+  factory :favorite4, class: 'Favorite' do
     association :post2, factory: :post2
-    association :user, factory: :admin_user
+    user_id { (User.find_by(email: FactoryBot.build(:admin_user).email) || FactoryBot.create(:admin_user)).id }
     created_at { "2021-06-14 22:28:32" }
     updated_at { "2021-06-14 22:28:32" }
   end
