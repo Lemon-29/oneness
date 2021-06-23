@@ -22,9 +22,8 @@ You can connct your favorite ppl, post your yoga posea and write your daily dial
 * Rails5.2.5
 * PostgreSQL13.3
 ## 機能一覧/list of functions
-* gameのCRUD機能(投稿・画像、編集、削除)
-* gameの作成・登録機能
-* gameのお気に入り機能
+* yogaのCRUD機能(投稿・画像、編集、削除)
+* yogaのお気に入り機能
 * お気に入り一覧表示機能
 * コメント機能
 * ユーザー登録機能
