@@ -49,5 +49,12 @@ RSpec.describe Post, type: :model do
         expect(post).not_to be_valid
       end
     end
+
+    context 'USER_IDとコンテンツと画像が入力された場合' do
+      it 'バリデーションが通る' do
+        post = Post.new(content: 'aaaa', image: File.open("./app/assets/images/pose1-1.jpg"), user_id: user.id)
+        expect(post).to be_valid
+      end
+    end
   end
 end
