@@ -4,8 +4,6 @@ describe 'user modelのテスト', type: :model do
     # let!(:second_user) { FactoryBot.create(:second_user)}
     let!(:user) { FactoryBot.create(:user) }
 
-
-    
     context 'Eメールが空の場合' do
       it 'バリデーションにひっかかる' do
         user.email = nil

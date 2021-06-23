@@ -7,6 +7,6 @@ FactoryBot.define do
   factory :post2, class: "Post" do
     content { "Post2" }
     image { File.open("./app/assets/images/pose1-2.jpg") }
-    user_id { (User.find_by(email: FactoryBot.build(:admin_user).email) || FactoryBot.create(:admin_user)).id }
+    user_id { (User.find_by(email: FactoryBot.build(:user2).email) || FactoryBot.create(:user2)).id }
   end
 end
