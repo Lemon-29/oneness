@@ -14,16 +14,18 @@
     <%= render 'layouts/header' %>
     <div class="layouts-appliocation">
       <% if should_sidebar? %>
-      <div class="layouts-appliocation_sidebar">
-        <%= render'application/sidebar' if should_sidebar? %>
-      </div>
-      <div class="layouts-appliocation_body">
-        <%= render 'layouts/flash_messages' %>
-        <%= yield %>
+        <div class="layouts-appliocation_sidebar">
+          <%= render'application/sidebar' if should_sidebar? %>
+        </div>
+        <div class="layouts-appliocation_body">
+          <%= render 'layouts/flash_messages' %>
+          <%= yield %>
+          <%= render 'layouts/footer' %>
         </div>
       <% else %>
         <%= render 'layouts/flash_messages' %>
         <%= yield %>
+        <%= render 'layouts/footer' %>
       <% end %>
     </div>
   </body>
