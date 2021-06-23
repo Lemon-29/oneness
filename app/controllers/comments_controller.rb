@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
         flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
       else
-        flash.now[:notice] = @comment.error_message_list("次の理由で更新できませんでした")
+        flash.now[:alert] = @comment.error_message_list("次の理由で更新できませんでした")
         format.js {render :edit_error}
       end
     end
@@ -39,8 +39,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
+    flash.now[:alert] = "コメントが削除されました"
     respond_to do |format|
-      flash.now[:notice] = "コメントが削除されました"
       format.js { render :index }
     end
   end
