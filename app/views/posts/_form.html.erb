@@ -1,15 +1,7 @@
-<div>
-    <div>
-        user name:
-    </div>
-    <div>
-        <%= current_user.name %>
-    </div>
-    <div>
-        image:
-    </div>
-    <div>
-        <%= image_tag current_user.image.url if current_user && current_user.image && current_user.image.url  %>
+<div class="profile_header-s">
+    <%= image_tag(current_user.image.url, class: 'user_profile-s') if current_user.image.present? %>
+    <div class="username-s">
+        <%= current_user.name %> さんの投稿
     </div>
 </div>
 
