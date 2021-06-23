@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :check_sender, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def create
     @post = Post.find(params[:post_id])
