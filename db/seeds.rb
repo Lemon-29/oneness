@@ -107,4 +107,15 @@ post5_2 = Post.create!(
   user_id: user5.id,
 )
 
-#memo favorites i'll do it later
+
+favorites1_1 = Favorite.create!(
+  user_id: user2.id,
+  post_id: post1_1.id
+)
+
+comment = Comment.create!(
+  user_id: user2.id,
+  post_id: post1_1.id,
+  content: "GOOD!",
+  score: 4.5
+)
