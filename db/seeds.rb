@@ -78,12 +78,12 @@ post2_2 = Post.create!(
 )
 post3_1 = Post.create!(
   content: "omg i love my shadow. so beautiful isn't it?",
-  image: File.open("./app/assets/images/pose4-1.jpg"),
+  image: File.open("./app/assets/images/pose3-1.jpg"),
   user_id: user3.id,
 )
 post3_2 = Post.create!(
   content: "love doing yoga at beach",
-  image: File.open("./app/assets/images/pose4-2.jpg"),
+  image: File.open("./app/assets/images/pose3-2.jpg"),
   user_id: user3.id,
 )
 post4_1 = Post.create!(
@@ -111,30 +111,30 @@ post5_2 = Post.create!(
 
 favorites1_1 = Favorite.create!(
   user_id: user1.id,
-  post_id: post1_1.id
+  post_id: post2_1.id
 )
 favorites1_2 = Favorite.create!(
   user_id: user2.id,
-  post_id: post1_2.id
+  post_id: post4_2.id
 )
 favorites1_3 = Favorite.create!(
   user_id: user3.id,
-  post_id: post1_3.id
+  post_id: post1_2.id
 )
 favorites1_4 = Favorite.create!(
   user_id: user4.id,
-  post_id: post1_4.id
+  post_id: post5_2.id
 )
 favorites1_5 = Favorite.create!(
   user_id: user5.id,
-  post_id: post1_5.id
+  post_id: post3_2.id
 )
 
 #------------
 
 comment1 = Comment.create!(
   user_id: user1.id,
-  post_id: post1_1.id,
+  post_id: post4_1.id,
   content: "nice pose. i wish i could do that like u!",
   score: 5
 )
@@ -146,7 +146,7 @@ comment2 = Comment.create!(
 )
 comment3 = Comment.create!(
   user_id: user3.id,
-  post_id: post1_1.id,
+  post_id: post1_2.id,
   content: "nice pose. i wish i could do that like u!",
   score: 3
 )
@@ -158,7 +158,7 @@ comment4 = Comment.create!(
 )
 comment5 = Comment.create!(
   user_id: user5.id,
-  post_id: post1_1.id,
+  post_id: post2_2.id,
   content: "ummmmm,,, i don't know why u posted this one cuz u have much better than picture. why this?",
   score: 1.0
 )
