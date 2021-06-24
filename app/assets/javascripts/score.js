@@ -16,7 +16,7 @@ function showHalfScores({
     size,
     scoreName,
   });
-}
+};
 
 function showReadonlyHalfScores({
   starOff,
@@ -37,7 +37,7 @@ function showReadonlyHalfScores({
     scoreName,
     hints: [['bad 1/2', 'bad'], ['poor 1/2', 'poor'], ['regular 1/2', 'regular'], ['good 1/2', 'good'], ['gorgeous 1/2', 'gorgeous']]
   });
-}
+};
 
 
 function showHalfScoresWithSelector(selector, where, {
@@ -58,7 +58,7 @@ function showHalfScoresWithSelector(selector, where, {
     size,
     scoreName,
   });
-}
+};
 
 function showReadonlyHalfScoresWithSelector(selector, where, {
   starOff,
@@ -79,4 +79,4 @@ function showReadonlyHalfScoresWithSelector(selector, where, {
     size,
     scoreName,
   });
-}
+};
