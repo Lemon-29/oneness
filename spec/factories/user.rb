@@ -1,18 +1,21 @@
+# require 'rails_helper'
+# require "cancan/matchers"
+
+
 FactoryBot.define do
   factory :user do
-    name {"test"}
-    email { "test@gmail.com" }
+    name {"juri"}
+    email { "admin@yahoo.com" }
     password { "juri1234" }
     password_confirmation { 'juri1234' }
     admin { true }
   end
 
   factory :user2, class: User do
-    name {"admin"}
-    email { "admin@gmail.com" }
+    name {"may"}
+    email { "may@gmail.com" }
     password { "may1234" }
     password_confirmation { 'may1234' }
-    admin { true }
   end
 
   # factory :user3, class: User do

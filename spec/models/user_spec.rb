@@ -1,3 +1,7 @@
+require 'rails_helper'
+# require "cancan/matchers"
+
+
 describe 'user modelのテスト', type: :model do
   describe 'バリデーションのテスト' do
     # let!(:user) { FactoryBot.create(:user)}
@@ -16,5 +20,4 @@ describe 'user modelのテスト', type: :model do
         expect(user).to be_valid
       end
     end
-  end
 end

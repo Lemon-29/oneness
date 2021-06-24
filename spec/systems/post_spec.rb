@@ -52,4 +52,30 @@ RSpec.describe '投稿機能', type: :system do
       end
     end
   end
+
+  describe '新規投稿機能' do
+    before do
+      visit new_user_session_path
+      click_link 'sessions-new_guest'
+      visit new_post_path
+    end
+  end
 end
+
+
+# TEST PATTERN ( ONLY SUCCESS )
+# - INDEX ○
+#   - ALREADY SAVED POST DISPLAY IN THE LIST ○
+#   - CHECK ID DESC IN THE LIST ○
+# - NEW & CREATE
+#   - BEFORE: LOGIN AND GO TO NEW
+#   - INPUT FORM AND SUBMIT
+# - SHOW
+#   - BEFORE: LOGIN AND GO TO SOME POST SHOW PAGE
+#   - CHECK ELEMENT EXISTS AND HAVE_CONTENT CONTENT, USERNAME
+# - EDIT & UPDATE
+#   - BEFORE: LOGIN AND GO TO SOME SHOW PAGE
+#   - CHECK EDIT BUTTON SHOW AND CLICK GO TO EDIT PAGE => INPUT FORM AND SUBMIT
+# - DESTROY
+#   - BEFORE: LOGIN AND GO SOME POST SHOW PAGE
+#   - CHECK DESTROY BUTTON SHOW AND CLICK CAN DESTROY

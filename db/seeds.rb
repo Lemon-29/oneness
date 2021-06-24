@@ -69,22 +69,22 @@ post1_2 = Post.create!(
 post2_1 = Post.create!(
   content: "so much relaxing",
   image: File.open("./app/assets/images/pose3-1.jpg"),
-  user_id: user3.id,
+  user_id: user2.id,
 )
 post2_2 = Post.create!(
   content: "what a beautiful day",
   image: File.open("./app/assets/images/pose3-2.jpg"),
-  user_id: user3.id,
+  user_id: user2.id,
 )
 post3_1 = Post.create!(
   content: "omg i love my shadow. so beautiful isn't it?",
   image: File.open("./app/assets/images/pose4-1.jpg"),
-  user_id: user4.id,
+  user_id: user3.id,
 )
 post3_2 = Post.create!(
   content: "love doing yoga at beach",
   image: File.open("./app/assets/images/pose4-2.jpg"),
-  user_id: user4.id,
+  user_id: user3.id,
 )
 post4_1 = Post.create!(
   content: "flying Pigeon. finally i did it!",
@@ -107,15 +107,58 @@ post5_2 = Post.create!(
   user_id: user5.id,
 )
 
+#------------
 
 favorites1_1 = Favorite.create!(
-  user_id: user2.id,
+  user_id: user1.id,
   post_id: post1_1.id
 )
+favorites1_2 = Favorite.create!(
+  user_id: user2.id,
+  post_id: post1_2.id
+)
+favorites1_3 = Favorite.create!(
+  user_id: user3.id,
+  post_id: post1_3.id
+)
+favorites1_4 = Favorite.create!(
+  user_id: user4.id,
+  post_id: post1_4.id
+)
+favorites1_5 = Favorite.create!(
+  user_id: user5.id,
+  post_id: post1_5.id
+)
 
-comment = Comment.create!(
+#------------
+
+comment1 = Comment.create!(
+  user_id: user1.id,
+  post_id: post1_1.id,
+  content: "nice pose. i wish i could do that like u!",
+  score: 5
+)
+comment2 = Comment.create!(
   user_id: user2.id,
   post_id: post1_1.id,
-  content: "GOOD!",
+  content: "gettin better! keep trying. well done xxx",
   score: 4.5
+)
+comment3 = Comment.create!(
+  user_id: user3.id,
+  post_id: post1_1.id,
+  content: "nice pose. i wish i could do that like u!",
+  score: 3
+)
+comment4 = Comment.create!(
+  user_id: user4.id,
+  post_id: post1_1.id,
+  content: "your pose isn't bad but the picture quality is terrible. get new one.",
+  score: 2.5
+)
+comment5 = Comment.create!(
+  user_id: user5.id,
+  post_id: post1_1.id,
+  content: "ummmmm,,, i don't know why u posted this one cuz u have much better than picture. why this?",
+  score: 1.0
 )
