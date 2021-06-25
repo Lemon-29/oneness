@@ -50,10 +50,8 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHHc9Q/edit?usp=sharing
 
 ## ER図
-<img src="./public/images/ERmapping.png" alt=“ER図” width="650px">
-![Screen flow diagram](https://user-images.githubusercontent.com/77761510/121129975-aaa49980-c868-11eb-9885-f3f76a52c4bb.png)
+![Screen Shot 2021-06-25 at 2 04 57](https://user-images.githubusercontent.com/77761510/123360794-e188e800-d5a8-11eb-96a8-a539b8afd646.png)
 
 ## 画面遷移図
-<img src="./public/images/STDiagram.pn" alt="画面遷移図" width="650px">
-![ERmapping](https://user-images.githubusercontent.com/77761510/121130281-269ee180-c869-11eb-92cf-4cfc9580086f.png)
+![Screen Shot 2021-06-25 at 10 56 52](https://user-images.githubusercontent.com/77761510/123360744-ca49fa80-d5a8-11eb-96e1-d112d06e4e22.png)
 
