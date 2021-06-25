@@ -7,6 +7,7 @@ describe 'user modelのテスト', type: :model do
     # let!(:user) { FactoryBot.create(:user)}
     # let!(:second_user) { FactoryBot.create(:second_user)}
     let!(:user) { FactoryBot.create(:user) }
+  end
 
     context 'Eメールが空の場合' do
       it 'バリデーションにひっかかる' do

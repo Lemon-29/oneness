@@ -68,7 +68,7 @@ RSpec.describe '投稿機能', type: :system do
       visit posts_path
       all('div a')[10].click #特定のpostの詳細に移動
       fill_in "comment[content]", with: "test comment"
-      score = find('.app-score') #コメント投稿欄から星のボタンを見つけて変数に格納
+      score = find('.app-score')#コメント投稿欄から星のボタンを見つけて変数に格納
       score.all("img")[2].click #score変数に入っている星のボタンから3番目に入っている星の画像をクリック
       click_on "登録する"
 

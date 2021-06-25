@@ -54,5 +54,14 @@ RSpec.describe 'Admin', type: :system do
     end
   end
 
+  context 'ログイン画面の管理者ゲストユーザーボタンから' do
+    it '管理者ページに遷移できる' do
+      visit root_path
+      click_on "ログイン"
+      click_link 'ゲストログイン（閲覧用）'
+      expect(page).to have_content 'ゲストユーザーとしてログインしました。'
+      expect(page).not_to have_content '管理者画面'
+    end
+  end
   # Comment, Post, Favorite, Userそれぞれの編集削除はsystem specでここに書くこと
 end
