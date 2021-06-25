@@ -53,4 +53,6 @@ RSpec.describe 'Admin', type: :system do
       expect(current_path).to eq rails_admin_path
     end
   end
+
+  # Comment, Post, Favorite, Userそれぞれの編集削除はsystem specでここに書くこと
 end

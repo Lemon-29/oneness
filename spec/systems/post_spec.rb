@@ -60,7 +60,31 @@ RSpec.describe '投稿機能', type: :system do
       visit new_post_path
     end
   end
+
+  context 'postの詳細画面からコメントと星のreviewが投稿できること' do
+    it '問題なくコメントと星が投稿できる', js: true do
+      visit new_user_session_path
+      click_link 'sessions-new_guest'
+      visit posts_path
+      all('div a')[10].click #特定のpostの詳細に移動
+      fill_in "comment[content]", with: "test comment"
+      score = find('.app-score') #コメント投稿欄から星のボタンを見つけて変数に格納
+      score.all("img")[2].click #score変数に入っている星のボタンから3番目に入っている星の画像をクリック
+      click_on "登録する"
+
+      expect(page).to have_content "test comment"
+    end
+  end
 end
+
+# 新規投稿の際のvalidationに引っかかった際のテスト
+# postの編集のてすと
+# postの削除のテスト
+# post詳細表示のテスト
+# Mypostに自分の投稿一覧が表示されることのテスト
+# postの詳細で星とコメントの投稿ができる => クリア
+
+
 
 
 # TEST PATTERN ( ONLY SUCCESS )

@@ -49,3 +49,5 @@ RSpec.describe 'お気に入り機能', type: :system do
     end
   end
 end
+
+# お気に入り解除のテストを実装

@@ -6,9 +6,20 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 
-RSpec.configure do |config|
-  config.include FactoryBot::Syntax::Methods ##こちらを追記
+Capybara.register_driver :selenium_chrome do |app|
+  options = ::Selenium::WebDriver::Chrome::Options.new
+  # options.add_argument('--headless')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-dev-shm-usage')
+  options.add_argument('--window-size=1400,1400')
+
+
+  driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
+
+# RSpec.configure do |config|
+#   config.include FactoryBot::Syntax::Methods ##こちらを追記
+# end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -34,9 +45,20 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  config.include FactoryBot::Syntax::Methods ##こちらを追記
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.before(:each) do |example|
+    if example.metadata[:type] == :system
+      if example.metadata[:js]
+        driven_by :selenium_chrome, screen_size: [1400, 1400]
+      else
+        driven_by :rack_test
+      end
+    end
+  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   describe 'バリデーションのテスト' do
     let!(:user) { FactoryBot.create(:user) }
-    let!(:comment) { FactoryBot.create(:comment) }
+    # let!(:comment) { FactoryBot.create(:comment) }
     let!(:post) { FactoryBot.create(:post) }
     let!(:post2) { FactoryBot.create(:post2) }
 

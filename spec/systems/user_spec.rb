@@ -60,7 +60,7 @@ RSpec.describe 'User関連機能',type: :system do
     end
     describe 'ログイン後' do
       context 'ログアウトした場合' do
-        it  'トップページに戻りログアウトすることができる。' do
+        it  'トップページに戻りログアウトのmsgが表示される' do
           visit root_path
           find("#log_in").click
           fill_in 'user[email]',with: 'snoopy@gmail.com'
@@ -74,3 +74,7 @@ RSpec.describe 'User関連機能',type: :system do
     end
   end
 end
+
+# アカウント削除(解約)のテスト
+# User情報編集のテスト
+# 
