@@ -36,7 +36,7 @@ RSpec.describe 'User関連機能',type: :system do
       it 'サインアップできない' do
         find("#sign_up").click
         click_button 'commit'
-        expect(page).to have_content "Eメール、Nameまたはパスワードが違います。"
+        expect(page).to have_content "Eメール、名前またはパスワードが違います。"
       end
     end
     context '全ての入力が正しい場合' do
