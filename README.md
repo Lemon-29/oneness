@@ -2,22 +2,19 @@
 ### 『Oneness』
 ## コンセプト/concept/ 
 #### ヨギーにのためのプラットフォーム/This app is for all yoga loves to be oneness 
-コロナ禍になり、ワークアウトの環境ですら大きな変化がありました。
-ヨガを愛する私もまたその1人です。
-このような状況で私が通っていたヨガスタジオもオンライに切り替わり、有難いことにヨガをする機会を見逃さなかったものの
-そこで何かsnsというツールを通して、繋がれるものが必要だと考えるようになりました。
-1人でヨガをしていては誰もポーズをみてくれない、1人で続けていくモチベーション、同じシークエンスを一緒にやって生まれるあのスタジオの空間を取り戻すことができます。
-また、オンラインになったこそ、ならではでポーズの写真や日記などで振り返る時間ができる、新しいヨガの様式を楽しむことができます。
-Since covid-19 our lives have been so much changes.
-It varies corona's lives depending on the country so some coutries are even difficult workout.
-I've been doing yoga , let's say "as a yoggy" more than 10 years. Even my yoga sutudio had to close during quarantine.
 
-My yoga teacher has created online yoga studio immediately. Lucky for me I didn't miss any oppotunities of my workout because of her.
-At the biggining of onlin studio, I felt a little bit wired because basically doing yoga with friends , teacher but doing yoga at my apartment by myself is kinda lonly and I felt isolated from the world. Sounds like over reacted but truth is it does.
-Tha't why I've been thinkig I wanna make something to connect all yoga loves.
-So when you do yoga  by yourself , No one can see your yoga and feelings so Best Yoga App For All Levels here.
-You can connct your favorite ppl, post your yoga posea and write your daily dialy as well don't need to feel lonly anymore! Let's get started!!
-## バージョン/version
+      このアプリはヨギーにのためのプラットフォームです。<br>
+      stay homeでworkoutの環境ですら大きな変化がありました。
+      1人でヨガをしていては誰もポーズをみてくれない、1人で続けていくモチベーション、
+      同じシークエンスを一緒にやって生まれるあのスタジオの空間を取り戻すことができます。 <br>
+      また、オンラインになったこそ、ポーズの写真や日記などで振り返る時間ができて
+      かつヨギーたちとのつながりを楽しむ、新しいヨガの様式を体験できます。<br>
+
+
+      This app is for all yoga loves to be oneness
+      When you do yoga by yourself ,  No one can see your yoga. Do you feel isolated ? No worries.<br>
+       Best App is For All YOGA Lovers here.
+       You can connct your favorite people, post your yoga pose and write your daily dialy as well, don't need to feel lonly anymore! Let's get started!!
 * Ruby2.6.5
 * Rails5.2.5
 * PostgreSQL13.3
