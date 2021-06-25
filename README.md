@@ -14,7 +14,8 @@
       This app is for all yoga loves to be oneness
       When you do yoga by yourself ,  No one can see your yoga. Do you feel isolated ? No worries.
        Best App is For All YOGA Lovers here.
-       You can connct your favorite people, post your yoga pose and write your daily dialy as well, don't need to feel lonly anymore! Let's get started!!
+       You can connct your favorite people, post your yoga pose and write your daily dialy as well, 
+       don't need to feel lonly anymore! Let's get started!!
 * Ruby2.6.5
 * Rails5.2.5
 * PostgreSQL13.3
