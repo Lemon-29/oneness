@@ -14,18 +14,29 @@ require 'rails_helper'
 
 RSpec.describe 'お気に入り機能', type: :system do
   describe 'お気に入り登録' do
-    let!(:user) { FactoryBot.create(:user) }
+    let!(:user) { User.create(name:"momo", email:"momo@gmail.com", password:"momo1234")}
     let!(:user2) { FactoryBot.create(:user2) }
-    let!(:post) { FactoryBot.create(:post) }
+    let!(:post) { FactoryBot.create(:post, user_id:user.id) }
+    let!(:post2) { FactoryBot.create(:post2, user_id:user2.id) }
+    let!(:favorite) { FactoryBot.create(:favorite, post_id:post.id, user_id:user2.id) }
 
     before do
-      visit new_user_session_path
-      click_link 'sessions-new_guest'
-      visit post_path(id: post.id)
+      visit root_path
+      # visit new_user_session_path
+      click_link 'ログイン'
+  
+      fill_in "user[name]",	with: "momo" 
+      fill_in "user[email]",	with: "momo@gmail.com" 
+      fill_in "user[password]",	with: "momo1234" 
+      # visit post_path(id: post.id)
+      click_on "commit"
     end
 
     context 'ログインしたユーザーが他人のポスト詳細ページにきたとき' do
       it 'お気に入り登録ができる' do
+        binding.pry
+        find_by_id("posts-index_list-#{post.id}_show").click
+        click_on 'BOOKMARK'
         click_on 'お気に入り追加'
         expect(page).to have_content '気に入りに追加しました！'
       end
@@ -50,4 +61,3 @@ RSpec.describe 'お気に入り機能', type: :system do
   end
 end
 
-# お気に入り解除のテストを実装

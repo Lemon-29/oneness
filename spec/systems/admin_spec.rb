@@ -63,5 +63,4 @@ RSpec.describe 'Admin', type: :system do
       expect(page).not_to have_content '管理者画面'
     end
   end
-  # Comment, Post, Favorite, Userそれぞれの編集削除はsystem specでここに書くこと
 end

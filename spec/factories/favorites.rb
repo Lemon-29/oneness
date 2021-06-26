@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :favorite do
-    association :post, factory: :post
-    user_id { (User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)).id }
+    # association :post, factory: :post
+    # user_id { (User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)).id }
     created_at { "2021-06-14 22:28:32" }
     updated_at { "2021-06-14 22:28:32" }
   end

@@ -16,7 +16,7 @@
     <p>
     </p>
     <% if @post.user_id == current_user.id %>
-      <%= link_to '🖋 編集 ', edit_post_path(@post.id) %>
+      <%= link_to '🖋 編集 ', edit_post_path(@post.id), id:"favorite-post-show#{@post.id}" %>
       <br>
       <%= link_to '🗑 削除 ', post_path(@post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
       <br>

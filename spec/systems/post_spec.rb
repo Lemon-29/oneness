@@ -77,12 +77,6 @@ RSpec.describe '投稿機能', type: :system do
   end
 end
 
-# 新規投稿の際のvalidationに引っかかった際のテスト
-# postの編集のてすと
-# postの削除のテスト
-# post詳細表示のテスト
-# Mypostに自分の投稿一覧が表示されることのテスト
-# postの詳細で星とコメントの投稿ができる => クリア
 
 
 
