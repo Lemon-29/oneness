@@ -24,22 +24,20 @@ RSpec.describe 'お気に入り機能', type: :system do
       visit root_path
       # visit new_user_session_path
       click_link 'ログイン'
-  
       fill_in "user[name]",	with: "momo" 
       fill_in "user[email]",	with: "momo@gmail.com" 
       fill_in "user[password]",	with: "momo1234" 
-      # visit post_path(id: post.id)
       click_on "commit"
     end
 
     context 'ログインしたユーザーが他人のポスト詳細ページにきたとき' do
       it 'お気に入り登録ができる' do
-        binding.pry
-        find_by_id("posts-index_list-#{post.id}_show").click
-        click_on "詳細", match: :first
-        click_on 'BOOKMARK'
+        binding.irb
+        find(".posts-index_list-item_right-button").click
+        find_by_id("posts-index_list-#{post.id}_show").find_link("編集").click
+        click_on '詳細', match: :first
         click_on 'お気に入り追加'
-        expect(page).to have_content '気に入りに追加しました！'
+        expect(page).to have_content 'お気に入りに追加しました！'
       end
     end
   end
