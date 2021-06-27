@@ -42,5 +42,4 @@
   <p><%= t('.unhappy') %>? <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %>.</p>
 
   <%= link_to t('.back'), :back %>
-  <%= link_to 'お気に入り一覧', user_favorites_path(user_id: current_user.id) %>
 </div>
