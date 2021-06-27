@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :comment do
     content { "MyString" }
     score { 3.5 }
-    association :post, factory: :post
-    user_id { (User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)).id }
+    # association :post, factory: :post
+    # user_id { (User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)).id }
   end
   factory :comment2, class: 'Comment' do
     content { "YEAR" }
