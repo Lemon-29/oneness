@@ -3,10 +3,34 @@ RSpec.describe 'Admin', type: :system do
 
   let!(:user) { FactoryBot.create(:user) }
   let!(:user2) { FactoryBot.create(:user2) }
-
+  # let!(:post) { FactoryBot.create(:post, user_id:user.id) }
+  let!(:post2) { FactoryBot.create(:post2, user_id:user2.id) }
+  let!(:favorite) { FactoryBot.create(:favorite, post_id:post2.id, user_id:user.id) }
+  # let!(:user2) { FactoryBot.create(:user2) }
+  # let!(:user2) { FactoryBot.create(:user2) }
+  # let!(:user2) { FactoryBot.create(:user2) }
+  # let!(:user2) { FactoryBot.create(:user2) }
+  # let!(:user2) { FactoryBot.create(:user2) }
   describe '管理者機能' do
     context '管理者の場合,' do
       it '管理者ページにアクセスできる' do
+        visit root_path
+        click_on "ログイン"
+        sleep(0.5)
+        click_on '管理者ログイン'
+        expect(page).to have_content '管理者ユーザーとしてログインしました。'
+        expect(page).to have_content '管理者画面'
+        click_on '管理者画面'
+        expect(current_path).to eq rails_admin_path
+        find('.nav-pills').find_link('Post').click
+        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
+        click_on('Confirmation')
+      end
+    end
+    
+
+    context '管理者の場合,' do
+      it 'userがpostした投稿を削除できる。' do
         visit root_path
         click_on "ログイン"
         fill_in 'user[name]',with: 'juri'
@@ -18,8 +42,11 @@ RSpec.describe 'Admin', type: :system do
         expect(page).to have_content '管理者画面'
         click_on '管理者画面'
         expect(current_path).to eq rails_admin_path
+        click_on '管理者画面'
+        expect(page).to have_content '管理者ユーザーとしてログインしました。'
       end
     end
+
     context '管理者でない場合,' do
       it '管理者ページにはアクセスできない' do
         visit root_path
@@ -32,7 +59,8 @@ RSpec.describe 'Admin', type: :system do
         expect(page).not_to have_content '管理者画面'
       end
     end
-  end
+  
+
   context 'ログイン画面の管理者ゲストユーザーボタンから' do
     it '管理者ページに遷移できる' do
       visit root_path
@@ -42,6 +70,7 @@ RSpec.describe 'Admin', type: :system do
       expect(page).not_to have_content '管理者画面'
     end
   end
+  
   context 'ログイン画面の管理者ゲストユーザーボタンから' do
     it '管理者ページに遷移できる' do
       visit root_path
@@ -63,4 +92,5 @@ RSpec.describe 'Admin', type: :system do
       expect(page).not_to have_content '管理者画面'
     end
   end
+end
 end

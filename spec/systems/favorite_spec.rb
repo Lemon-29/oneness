@@ -36,6 +36,7 @@ RSpec.describe 'お気に入り機能', type: :system do
       it 'お気に入り登録ができる' do
         binding.pry
         find_by_id("posts-index_list-#{post.id}_show").click
+        click_on "詳細", match: :first
         click_on 'BOOKMARK'
         click_on 'お気に入り追加'
         expect(page).to have_content '気に入りに追加しました！'
