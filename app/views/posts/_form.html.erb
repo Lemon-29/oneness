@@ -8,8 +8,9 @@
 <%= form_with(model: @post, local: true) do |f| %>
 <div>
   <div class = "field-content">
-      <%= f.label :'🖋 投稿内容を書く'%><br>
-      <%= f.text_area :content%>
+      <%= f.label :'🖋 投稿内容を書いてみる。'%><br>
+      <%= f.text_area :content,placeholder:"投稿内容を書いてみる。"%>
+      
   </div>
 </div>
 
