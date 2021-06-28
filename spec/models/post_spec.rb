@@ -4,8 +4,9 @@ RSpec.describe Post, type: :model do
   describe 'バリデーションのテスト' do
     let!(:user) { FactoryBot.create(:user) }
     let!(:user2) { FactoryBot.create(:user2) }
-    let!(:post) { FactoryBot.create(:post) }
-    let!(:post2) { FactoryBot.create(:post2) }
+    let!(:post) { FactoryBot.create(:post, user_id:user.id) }
+    let!(:post2) { FactoryBot.create(:post2, user_id:user2.id) }
+    
 
     context 'コンテンツが空の場合' do
       it 'バリデーションにひっかる' do

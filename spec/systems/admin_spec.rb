@@ -20,7 +20,7 @@ RSpec.describe 'Admin', type: :system do
     context '管理者の場合,' do
       it '管理者ページにアクセスできて、投稿の削除ができる。' do
         expect(current_path).to eq rails_admin_path
-        find('.nav-pills').find_link('Post').click
+        first('.nav-pills').find_link('Post').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
         click_on('Confirmation')
         expect(page).to have_content 'translation missing: ja.admin.flash.successful'
@@ -29,7 +29,7 @@ RSpec.describe 'Admin', type: :system do
     context '管理者の場合,' do
       it '管理者のページにアクセスできて、お気に入りを削除することができる。' do
         expect(current_path).to eq rails_admin_path
-        find('.nav-pills').find_link('Favorite').click
+        first('.nav-pills').find_link('Favorite').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(7)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
         click_on('Confirmation')
         expect(page).to have_content 'translation missing: ja.admin.flash.successful'
@@ -39,7 +39,7 @@ RSpec.describe 'Admin', type: :system do
     context '管理者の場合,' do
       it '管理者ページにアクセスできて投稿の編集ができる。' do
         expect(current_path).to eq rails_admin_path
-        find('.nav-pills').find_link('Post').click
+        first('.nav-pills').find_link('Post').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.edit.menu').click
         find_by_id('post_content').set "編集しましたよ〜〜〜"
         click_button 'Save'
@@ -50,7 +50,7 @@ RSpec.describe 'Admin', type: :system do
     context '管理者の場合,' do
       it '管理者ページにアクセスできて、コメントの編集ができる。' do
         expect(current_path).to eq rails_admin_path
-        find('.nav-pills').find_link('Comment').click
+        first('.nav-pills').find_link('Comment').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.edit.menu').click
         find_by_id('comment_content').set "I DID edit her comment!"
         click_button 'Save'
@@ -62,7 +62,7 @@ RSpec.describe 'Admin', type: :system do
     context '管理者の場合,' do
       it '管理者ページにアクセスできてコメントの削除ができる。' do
         expect(current_path).to eq rails_admin_path
-        find('.nav-pills').find_link('Comment').click
+        first('.nav-pills').find_link('Comment').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
         click_on('Confirmation')
         expect(page).to have_content 'translation missing: ja.admin.flash.successful'
@@ -83,10 +83,11 @@ RSpec.describe 'Admin', type: :system do
     context '管理者でない場合,' do
       it '管理者ページにはアクセスできない' do
         visit root_path
+            
         click_on "ログイン"
-        fill_in 'user[name]',with: 'may'
-        fill_in 'user[email]',with: 'may@yahoo.com'
-        fill_in 'user[password]', with: 'may1234'
+        fill_in :user_name, with: 'may'
+        fill_in :user_email, with: 'may@yahoo.com'
+        fill_in :user_password, with: 'may1234'
         click_button 'commit'
         expect(page).to have_content 'ログインしました。'
         expect(page).to have_no_content '管理者ログイン'

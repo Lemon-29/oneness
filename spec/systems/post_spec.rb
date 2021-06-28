@@ -2,8 +2,9 @@ require 'rails_helper'
 RSpec.describe '投稿機能', type: :system do
   let!(:user) { FactoryBot.create(:user) }
   let!(:user2) { FactoryBot.create(:user2) }
-  let!(:post) { FactoryBot.create(:post) }
-  let!(:post2) { FactoryBot.create(:post2) }
+  let!(:post) { FactoryBot.create(:post, user_id:user.id) }
+  let!(:post2) { FactoryBot.create(:post2, user_id:user2.id) }
+
 
   describe '一覧表示機能' do
     before do
@@ -54,26 +55,29 @@ RSpec.describe '投稿機能', type: :system do
   end
 
   describe '新規投稿機能' do
-    before do
-      visit new_user_session_path
-      click_link 'sessions-new_guest'
-      visit new_post_path
-    end
-  end
-
+  #   before do
+  #     visit new_user_session_path
+  #     click_link 'sessions-new_guest'
+  #     visit new_post_path
+  #   end
+  
   context 'postの詳細画面からコメントと星のreviewが投稿できること' do
     it '問題なくコメントと星が投稿できる', js: true do
+      
+      
       visit new_user_session_path
       click_link 'sessions-new_guest'
       visit posts_path
+      # all('div a')[10].click #特定のpostの詳細に移動
       all('div a')[10].click #特定のpostの詳細に移動
       fill_in "comment[content]", with: "test comment"
       score = find('.app-score')#コメント投稿欄から星のボタンを見つけて変数に格納
       score.all("img")[2].click #score変数に入っている星のボタンから3番目に入っている星の画像をクリック
       click_on "登録する"
-
+      
       expect(page).to have_content "test comment"
     end
+  end
   end
 end
 

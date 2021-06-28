@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   describe 'バリデーションのテスト' do
     let!(:user) { FactoryBot.create(:user) }
-    # let!(:comment) { FactoryBot.create(:comment) }
-    let!(:post) { FactoryBot.create(:post) }
-    let!(:post2) { FactoryBot.create(:post2) }
+    let!(:user2) { FactoryBot.create(:user2) }
+    let!(:post) { FactoryBot.create(:post, user_id:user.id) }
+    let!(:post2) { FactoryBot.create(:post2, user_id:user2.id) }
+
 
     context 'コメントが空の場合' do
       it 'バリデーションにひっかる' do

@@ -3,24 +3,24 @@ RSpec.describe 'User関連機能',type: :system do
   before do
     admin_user = User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)
     normal_user = FactoryBot.create(:user2)
-    
     visit root_path
   end
 
   describe 'devise関連機能' do
     context '全ての入力が正しい場合' do
       it 'サインアップできる' do
-        binding.irb
+        # binding.irb
         click_on "新規登録"
-        fill_in "user[name]", with: "may"
-        fill_in "user[email]", with: "may@yahoo.com"
-        fill_in "user[password]", with: "may1234"
-        fill_in "user[password_confirmation]", with: "may1234"
+        fill_in "user[name]", with: "sarah"
+        fill_in "user[email]", with: "sarah@gmail.com"
+        fill_in "user[password]", with: "sarah1234"
+        fill_in "user[password_confirmation]", with: "sarah1234"
         sleep(0.5)
         click_button 'アカウント登録'
         expect(page).to have_content 'アカウント登録が完了しました。'
       end
     end
+
     context '入力漏れが合った場合' do
       it 'サインアップできない' do
         click_on 'ログイン'

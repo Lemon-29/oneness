@@ -1,9 +1,11 @@
 require 'rails_helper'
 
+
 RSpec.describe Favorite, type: :model do
   describe 'バリデーションのテスト' do
     let!(:user) { FactoryBot.create(:user) }
-    let!(:post) { FactoryBot.create(:post) }
+    let!(:post) { FactoryBot.create(:post, user_id:user.id) }
+
 
     context 'USER_IDが空の場合' do
       it 'バリデーションにひっかる' do
