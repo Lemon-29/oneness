@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: [:create, :destroy]
-  resources :users, only: [:index] do
+  resources :users do
     resources :favorites, only: [:index]
     resources :posts, only: [:index], controller: 'users/posts'
   end

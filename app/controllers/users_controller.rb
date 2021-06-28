@@ -15,8 +15,4 @@ class UsersController < ApplicationController
     redirect_to posts_path, notice: '管理者ユーザーとしてログインしました。'
   end
 
-  def index
-    @users = User.all
-  end
-
 end

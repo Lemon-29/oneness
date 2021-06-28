@@ -1,13 +1,16 @@
 require 'rails_helper'
 RSpec.describe 'User関連機能',type: :system do
   before do
-    user = User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)
+    admin_user = User.find_by(email: FactoryBot.build(:user).email) || FactoryBot.create(:user)
+    normal_user = FactoryBot.create(:user2)
+    
     visit root_path
   end
 
   describe 'devise関連機能' do
     context '全ての入力が正しい場合' do
       it 'サインアップできる' do
+        binding.irb
         click_on "新規登録"
         fill_in "user[name]", with: "may"
         fill_in "user[email]", with: "may@yahoo.com"
@@ -31,9 +34,12 @@ RSpec.describe 'User関連機能',type: :system do
     context '全ての入力が正しい場合' do
       it 'ログインできる' do
         click_on 'ログイン'
+        fill_in "user[name]", with: "may"
         fill_in 'user[email]',with: 'may@yahoo.com'
         fill_in 'user[password]', with: 'may1234'
-        click_button 'ログイン'
+        # find('ログイン').find_link('.btn btn-primary').click
+        # click_button 'ログイン'
+        click_button 'commit'
         expect(page).to have_content 'ログインしました。'
       end
     end
@@ -47,21 +53,6 @@ RSpec.describe 'User関連機能',type: :system do
         expect(page).to have_content 'Eメール、名前またはパスワードが違います。'
       end
     end
-#       context 'ログアウトした場合' do
-#         it  'トップページに戻りログイン状態が解除される' do
-  
-#   binding.pry
-  
-#           click_on 'ログイン'
-#           fill_in 'user[name]', with: 'lisa'
-#           fill_in 'user[email]',with: 'lisa@gmail.com'
-#           fill_in 'user[password]', with: 'paris1234'
-#           click_button 'ログイン'
-#           expect(page).to have_content 'Oneness'
-#           sleep(0.5)
-#           click_on 'ログアウトしました。'
-#       end
-#     end
-  # end
+  end
 end
 

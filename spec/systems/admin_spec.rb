@@ -18,7 +18,7 @@ RSpec.describe 'Admin', type: :system do
     end
   
     context '管理者の場合,' do
-      it '管理者ページにアクセスできて投稿の削除ができる。' do
+      it '管理者ページにアクセスできて、投稿の削除ができる。' do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('Post').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
@@ -27,7 +27,7 @@ RSpec.describe 'Admin', type: :system do
       end
     end
     context '管理者の場合,' do
-      it 'お気に入りを削除することができる。' do
+      it '管理者のページにアクセスできて、お気に入りを削除することができる。' do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('Favorite').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(7)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
@@ -48,7 +48,7 @@ RSpec.describe 'Admin', type: :system do
     end
 
     context '管理者の場合,' do
-      it '管理者ページにアクセスできてコメントの編集ができる。' do
+      it '管理者ページにアクセスできて、コメントの編集ができる。' do
         expect(current_path).to eq rails_admin_path
         find('.nav-pills').find_link('Comment').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.edit.menu').click
@@ -60,9 +60,9 @@ RSpec.describe 'Admin', type: :system do
 
 
     context '管理者の場合,' do
-      it '管理者ページにアクセスできて投稿の削除ができる。' do
+      it '管理者ページにアクセスできてコメントの削除ができる。' do
         expect(current_path).to eq rails_admin_path
-        find('.nav-pills').find_link('Post').click
+        find('.nav-pills').find_link('Comment').click
         find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
         click_on('Confirmation')
         expect(page).to have_content 'translation missing: ja.admin.flash.successful'
