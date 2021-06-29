@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+# ruby '2.6.5'
 
 gem 'rails', '~> 5.2.5'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -20,6 +20,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -27,18 +28,17 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails'
   gem 'spring-commands-rspec'
-  gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
   gem 'letter_opener_web'
 end
 
 group :test do
+  gem 'factory_bot_rails'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
   gem 'webdrivers'
 end
 
@@ -47,7 +47,6 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'ransack'
 gem 'kaminari', '~> 0.17.0'
-gem 'jquery-rails'
 gem 'ratyrate'
 gem "bulma-rails"
 gem 'rails_admin', '~> 2.0'
@@ -60,5 +59,4 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise-i18n'
 
 gem 'bootstrap', '~> 4.5'
-gem 'jquery-rails'
 gem 'cancancan'

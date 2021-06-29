@@ -64,3 +64,26 @@
   30% { opacity: 0; }
  100% { opacity: 0; }
 }
+
+
+.bottom  {
+  margin:auto 0;
+}
+
+.text-center {
+  margin:auto 0;
+  padding-top: 5px;
+}
+
+.my_page {
+  padding:50px;
+  margin:left;
+}
+
+.mypage_button {
+  display: flex;
+  padding:0 10px;
+}
+.mypage_button a{
+  margin-left: 10px;
+}

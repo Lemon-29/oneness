@@ -8,22 +8,128 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script>
+      function showHalfScores({
+        starOff,
+        starOn,
+        starHalf,
+        scoreName,
+        size,
+      }) {
+        const elements = $('.app-score');
+        if (elements.length == 0) return;
+        elements.raty({
+          starOff,
+          starOn,
+          starHalf,
+          half:  true,
+          hints: [['bad 1/2', 'bad'], ['poor 1/2', 'poor'], ['regular 1/2', 'regular'], ['good 1/2', 'good'], ['gorgeous 1/2', 'gorgeous']],
+          size,
+          scoreName,
+        });
+      };
+
+      function showReadonlyHalfScores({
+        starOff,
+        starOn,
+        starHalf,
+        scoreName,
+        size,
+      }) {
+        const elements = $('.app-score_readonly');
+        if (elements.length == 0) return;
+        elements.raty({
+          starOff,
+          starOn,
+          starHalf,
+          readOnly: true,
+          half:  true,
+          size,
+          scoreName,
+          hints: [['bad 1/2', 'bad'], ['poor 1/2', 'poor'], ['regular 1/2', 'regular'], ['good 1/2', 'good'], ['gorgeous 1/2', 'gorgeous']]
+        });
+      };
+
+
+      function showHalfScoresWithSelector(selector, where, {
+        starOff,
+        starOn,
+        starHalf,
+        scoreName,
+        size,
+      }) {
+        const elements = $(selector).find(where);
+        if (elements.length == 0) return;
+        elements.raty({
+          starOff,
+          starOn,
+          starHalf,
+          half:  true,
+          hints: [['bad 1/2', 'bad'], ['poor 1/2', 'poor'], ['regular 1/2', 'regular'], ['good 1/2', 'good'], ['gorgeous 1/2', 'gorgeous']],
+          size,
+          scoreName,
+        });
+      };
+
+      function showReadonlyHalfScoresWithSelector(selector, where, {
+        starOff,
+        starOn,
+        starHalf,
+        scoreName,
+        size,
+      }) {
+        const elements = $(selector).find(where);
+        if (elements.length == 0) return;
+        elements.raty({
+          starOff,
+          starOn,
+          starHalf,
+          readOnly: true,
+          half:  true,
+          hints: [['bad 1/2', 'bad'], ['poor 1/2', 'poor'], ['regular 1/2', 'regular'], ['good 1/2', 'good'], ['gorgeous 1/2', 'gorgeous']],
+          size,
+          scoreName,
+        });
+      };
+    </script>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
-      <%= yield %>
-      <% if user_signed_in? %>
-        <%= link_to "post投稿", new_post_path %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <div class="layouts-appliocation">
+      <% if should_sidebar? %>
+        <div class="layouts-appliocation_sidebar">
+          <%= render'application/sidebar' if should_sidebar? %>
+        </div>
+        <div class="layouts-appliocation_body">
+          <%= render 'layouts/flash_messages' %>
+          <%= yield %>
+          <%= render 'layouts/footer' %>
+        </div>
       <% else %>
+        <%= render 'layouts/flash_messages' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
       <% end %>
-      <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-    <% end %> 
-
+    </div>
   </body>
+  <script>
+      window.starOffPath = '<%= asset_path('star-off.png') %>'
+      window.starOnPath = '<%= asset_path('star-on.png') %>'
+      window.starHalfPath = '<%= asset_path('star-half.png') %>'
+      window.showReadonlyHalfScores({
+        starOff: window.starOffPath,
+        starOn : window.starOnPath,
+        starHalf: window.starHalfPath,
+        size: 25,
+      });
+      window.showHalfScores({
+        starOff: window.starOffPath,
+        starOn : window.starOnPath,
+        starHalf: window.starHalfPath,
+        scoreName: 'comment[score]',
+        size: 25,
+      });
+    </script>
 </html>

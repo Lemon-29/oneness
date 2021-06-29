@@ -9,19 +9,9 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_posts, through: :favorites, source: :post
   has_many :comments  #can take user's comments w/user.comments
-  has_many :records
   mount_uploader :image, ImageUploader
 
-  def follow!(other_user) 
-    active_relationships.create!(followed_id: other_user.id)
-  end
-  
-  def following?(other_user)
-    active_relationships.find_by(followed_id: other_user.id)
-  end
-
-  def unfollow!(other_user)
-    active_relationships.find_by(followed_id: other_user.id).destroy
-  end
-
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true
 end

@@ -3,7 +3,8 @@
 ## コンセプト/concept/ 
 #### ヨギーにのためのプラットフォーム/This app is for all yoga loves to be oneness 
 
-            このアプリはヨギーにのためのプラットフォームです。<br>
+
+      このアプリはヨギーにのためのプラットフォームです。<br>
       stay homeでworkoutの環境ですら大きな変化がありました。
       1人でヨガをしていては誰もポーズをみてくれない、1人で続けていくモチベーション、
       同じシークエンスを一緒にやって生まれるあのスタジオの空間を取り戻すことができます。 <br>
@@ -13,8 +14,10 @@
 
       This app is for all yoga loves to be oneness
       When you do yoga by yourself ,  No one can see your yoga. Do you feel isolated ? No worries.<br>
-       Best App For All YOGA Lovers is here.
-       You can connct your favorite people, post your yoga pose and bookmark your favorite pictures as well, don't need to feel lonly anymore! Let's get started!!
+
+      Best App For All YOGA Lovers is here.
+      You can connct your favorite people, post your yoga pose and bookmark your favorite pictures as well, don't need to feel lonly anymore! Let's get started!!
+## バージョン/version
 
 * Ruby2.6.5
 * Rails5.2.5
@@ -47,9 +50,12 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 ## ワイヤーフレーム/wire-flame
 https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHHc9Q/edit?usp=sharing
 
-## ER図
+
+## ER_diagram
+<img src="./public/images/ER_diagram.png" alt=“ER図” width="650px">
 ![Screen Shot 2021-06-25 at 2 04 57](https://user-images.githubusercontent.com/77761510/123360794-e188e800-d5a8-11eb-96a8-a539b8afd646.png)
 
-## 画面遷移図
-![Screen Shot 2021-06-25 at 10 56 52](https://user-images.githubusercontent.com/77761510/123360744-ca49fa80-d5a8-11eb-96e1-d112d06e4e22.png)
+## 画面遷移図/Screen_flow_diagram
+<img src="./public/images/screen_flow_diagram.png" alt="画面遷移図" width="650px">
+
 

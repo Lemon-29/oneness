@@ -1,28 +1,27 @@
-<div>
-    <div>
-        user name:
-    </div>
-    <div>
-        <%= current_user.name %>
-    </div>
-    <div>
-        image:
-    </div>
-    <div>
-        <%= image_tag current_user.image.url if current_user && current_user.image && current_user.image.url  %>
+<div class="profile_header-s">
+    <%= image_tag(current_user.image.url, class: 'user_profile-s') if current_user.image.present? %>
+    <div class="username-s">
+        <%= current_user.name %> さんの投稿
     </div>
 </div>
 
 <%= form_with(model: @post, local: true) do |f| %>
-  <div class = "field">
-      <%= f.label :投稿内容%><br>
-      <%= f.text_area :content%>
+<div>
+  <div class = "field-content">
+      <%= f.label :'🖋 投稿内容を書いてみる。'%><br>
+      <%= f.text_area :content,placeholder:"投稿内容を書いてみる。"%>
+      
   </div>
-  <div class = "field">
-      <%= f.label :画像%><br>
+</div>
+
+<div>
+  <div class = "field-image">
+      <%= f.label :'📷  画像を選択する'%><br>
       <%= f.file_field :image %>
   </div>
+  <%= image_tag(@post.image.url) if @post.image.present? %>
   <div>
-      <%= f.submit %>
+    <%= f.submit %>
   </div>
+</div>
 <% end %>

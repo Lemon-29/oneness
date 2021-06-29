@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
   before_action :which_post?, only: [:create, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :check_sender, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(permitted_parameter)
@@ -7,7 +11,7 @@ class CommentsController < ApplicationController
       if @comment.save
         format.js { render :index }
       else
-        format.html { redirect_to post_path(@post), notice: '投稿できませんでした...' }
+        format.html { redirect_to post_path(@post), notice: @comment.error_message_list("次の理由で投稿できませんでした") }
       end
     end
   end
@@ -27,17 +31,16 @@ class CommentsController < ApplicationController
         flash.now[:notice] = 'コメントが編集されました'
         format.js { render :index}
       else
-        flash.now[:notice] = 'コメントの編集に失敗しました'
+        flash.now[:alert] = @comment.error_message_list("次の理由で更新できませんでした")
         format.js {render :edit_error}
       end
     end
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
     @comment.destroy
+    flash.now[:alert] = "コメントが削除されました"
     respond_to do |format|
-      flash.now[:notice] = "コメントが削除されました"
       format.js { render :index }
     end
   end
@@ -46,7 +49,15 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
   end
 
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
   def permitted_parameter
-    params.require(:comment).permit(:post_id, :content).merge(user_id: current_user.id)
+    params.require(:comment).permit(:post_id, :content, :score).merge(user_id: current_user.id)
+  end
+
+  def check_sender
+    redirect_to post_path(id: @post.id), alert: 'アクセス権限がありません' if @comment.user_id != current_user.id
   end
 end

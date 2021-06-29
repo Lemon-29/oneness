@@ -1,0 +1,15 @@
+.application-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #3e3e3e;
+  width: 100vw;
+  height: 40px;
+  &_copyright {
+    padding: 16px;
+    text-align: center;
+    height: 100%;
+    font-size: 14px;
+    color: #b3b3b3;
+  }
+}

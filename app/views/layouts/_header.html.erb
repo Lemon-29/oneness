@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand navbar-light">
+  <nav class="navbar navbar-expand navbar-light layouts-header">
     <h2><%= link_to "Oneness", root_path, class: 'navbar-brand' %></h2>
     <div id="Navber">
       <ul class="navbar-nav">
@@ -18,10 +18,8 @@
             <%= link_to "ログイン", new_user_session_path, class: 'nav-link' %>
           </li>
             <% end %>
-
-            
           <% if current_user.try(:admin?) %>
-        <li class = "item_bar"> <%= link_to '管理者画面', rails_admin_path, class: 'nav-link' %></li>
+        <li class = "item_bar"> <%= link_to '管理者画面', rails_admin_path, class: 'nav-link',id:"admin_login" %></li>
         <% end %>
       </ul>
     </div>

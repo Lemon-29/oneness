@@ -1,0 +1,23 @@
+@import "bootstrap";
+
+.alert-wrapper {
+  // max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.notice {
+  display: flex;
+}
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
+}
+
+a:hover {
+  color: rgb(255, 184, 184);
+}

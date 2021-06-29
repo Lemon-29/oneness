@@ -1,42 +1,52 @@
-<div class="container-fluid py-4 mw-md">
-  <p id="notice"><%= notice %></p>
-  <div class="profile_header-s">
-    <%= image_tag(@post.user.image.url, class: 'user_profile-s') if @post.user.image.present? %>
-    <div class="username-s">
-      <%= @post.user.name %> さんの投稿
+<div class="posts-show">
+
+  <div class="left item">
+    <div class="profile_header-s">
+      <%= image_tag(@post.user.image.url, class: 'user_profile-s') if @post.user.image.present? %>
+      <div class="username-s">
+        <%= @post.user.name %> さんの投稿
+      </div>
     </div>
-  </div>
-  </p>
-    <%= @post.content %>
-  </p>
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag(@post.image.url) if @post.image.present? %>
-  <p>
-  </p>
-  <%= link_to '🖋 編集 ', edit_post_path(@post.id) %>
-  <br>
-  <%= link_to '🗑 削除 ', post_path(@post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
-  <br>
-  <% unless @post.user_id == current_user.id %>
-    <% if @favorite.present? %>
-      <%= link_to ' 💔 お気に入り解除 ', favorite_path(@favorite), method: :delete, class: 'btn-circle-border-double' %>
+    </p>
+      <%= @post.content %>
+    </p>
+    <p>
+      <strong>Image:</strong>
+      <%= image_tag(@post.image.url) if @post.image.present? %>
+    <p>
+    </p>
+    <% if @post.user_id == current_user.id %>
+      <%= link_to '🖋 編集 ', edit_post_path(@post.id), id:"favorite-post-show#{@post.id}" %>
+      <br>
+      <%= link_to '🗑 削除 ', post_path(@post.id), method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %>
+      <br>
     <% else %>
-      <%= link_to '❤️ お気に入り追加', favorites_path(post_id: @post.id), method: :post, class: 'btn-circle-border-double' %>
+      <% if @favorite.present? %>
+        <%= link_to ' 💔 お気に入り解除 ', favorite_path(@favorite), method: :delete, class: 'btn-circle-border-double' %>
+      <% else %>
+        <%= link_to '❤️ お気に入り追加', favorites_path(post_id: @post.id), method: :post, class: 'btn-circle-border-double' %>
+      <% end %>
     <% end %>
-  <% end %>
-  <br>
-
-  <div class="container">
-    <p id="notice"><%= notice %></p>
-    </div>
-    <p class = 'btn-border-bottom'><p>コメント一覧</p>
-    <div id="comments_area">
-      <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
-    </div>
-    <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+    <br>
   </div>
+  <div class="right item">
+    <div class="container">
+      </div>
+      <p class = 'btn-border-bottom'>
+      <p>🗒 コメント一覧</p>
+      <p><%= @comments.length %>件</p>
+      <div>平均レビュー数</div>
+      <div class="app-score_readonly" data-score=<%= "#{@post.avg_score}" %>></div>
+    <div>
+    <div class="right item">
+        <div id="comments_area">
+          <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
+        </div>
+        <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
+      </div>
 
-  <%= link_to '🔙  (戻る)', posts_path %>
-  <br>
+      <%= link_to '🔙  (戻る)', posts_path %>
+      <br>
+    </div>
+  </div>
 </div>

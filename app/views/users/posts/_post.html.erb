@@ -1,0 +1,35 @@
+<div class="posts-index_list-item" id=<%= "posts-index_list-#{post.id}" %>>
+    <div class="posts-index_list-item_left">
+        <div class="posts-index_list-item_left-image" style="background-image: url(<%= post.image.url %>)"></div>
+    </div>
+    <div class="posts-index_list-item_right">
+        <div class="posts-index_list-item_right-date">
+            <%= "#{post.created_at.day} / #{post.created_at.month} / #{post.created_at.year}" %>
+        </div>
+        <div class="posts-index_list-item_right-profile profile_header-s">
+            <%= image_tag(post.user.image.url, class: 'user_profile-s') if post.user.image.present? %>
+            <div class="username-s">
+                <%= post.user.name %> さんの投稿
+            </div>
+        </div>
+        <div class="posts-index_list-item_right-content">
+            <%= post.content %>
+        </div>
+        <div class="posts-index_list-item_right-comments">
+            <%= "コメント数: #{post.comments.length}件" %>
+        </div>
+        <div class="posts-index_list-item_right-review-title">
+            <div>平均レビュー数</div>
+        </div>
+        <div class="posts-index_list-item_right-review-star">
+            <div class="app-score_readonly" data-score=<%= "#{post.avg_score}" %>></div>
+        </div>
+        <div class="posts-index_list-item_right-buttons">
+            <%= link_to '詳細', post_path(post.id), class: "posts-index_list-item_right-button" %>
+            <% if current_user && current_user.id == post.user_id %>
+                <%= link_to '編集', edit_post_path(post.id), class: "posts-index_list-item_right-button" %>
+                <%= link_to '削除', post_path(post.id), class: "posts-index_list-item_right-button", method: :delete, data: {confirm: "投稿を削除してもよろしいでしょうか？"} %><br>
+            <% end %>
+        </div>
+    </div>
+</div>

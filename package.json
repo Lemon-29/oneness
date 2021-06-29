@@ -2,6 +2,8 @@
   "name": "oneness",
   "private": true,
   "dependencies": {
-    "bootstrap": "4"
+    "bootstrap": "4",
+    "jquery": "^3.5.1",
+    "raty-js": "^3.0.0"
   }
 }

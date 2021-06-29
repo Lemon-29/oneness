@@ -1,18 +1,16 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :create]
-  before_action :set_post, only: [:edit, :update, :show]
+  before_action :authenticate_user!
+  before_action :set_post, only: [:edit, :update, :show, :destroy]
+  before_action :check_sender, only: [:edit, :update, :destroy]
 
   def index
-    @posts  = Post.all
+    @posts = Post.includes(:comments).all.order(created_at: :desc)
   end
 
   def show
     @favorite = current_user.favorites.find_by(post_id: @post.id)
-    @comments = @post.comments
     @comment = @post.comments.build
-    # @post = Post.find(params[:id])
-    # @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
-    # @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
+    @comments = @post.comments.select(&:id)
   end
 
   def new
@@ -20,12 +18,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @post = Post.new(post_params)
-    # @post.user_id = current_user.id
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to posts_path
     else
+      flash.now['alert'] = @post.error_message_list("次の理由で投稿できませんでした")
       render :new
     end
   end
@@ -37,6 +34,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to posts_path, notice: '編集しました！'
     else
+      flash.now['alert'] = @post.error_message_list("次の理由で投稿できませんでした")
       render :edit
     end
   end
@@ -53,6 +51,10 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :image, :image_cache, :user_id, :content)
+    params.require(:post).permit(:content, :image, :image_cache, :content).merge(user_id: current_user.id)
+  end
+
+  def check_sender
+    redirect_to posts_path, alert: 'アクセス権限がありません' if @post.user_id != current_user.id
   end
 end
