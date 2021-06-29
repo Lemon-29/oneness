@@ -39,9 +39,11 @@
       <div class="app-score_readonly" data-score=<%= "#{@post.avg_score}" %>></div>
     <div>
     <div class="right item">
-        <div id="comments_area">
+    <div class=' content_target'>
+        <div id="comments_area" >
           <%= render partial: 'comments/index', locals: { comments: @comments, post: @post } %>
         </div>
+    </div>
         <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
       </div>
 

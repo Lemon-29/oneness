@@ -123,3 +123,21 @@ margin: 30px;
 .button_new {
   margin:20px;
 }
+
+.comments-index {
+display: flex;
+}
+
+.box_index  {
+display: flex;
+
+}
+
+.content_target {
+  margin-top: 0;
+  overflow: scroll;
+  max-height: 72%;
+  flex-direction: column;
+  word-wrap:break-word;
+  width: 100%;
+}
