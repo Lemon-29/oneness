@@ -40,8 +40,7 @@ user4 = User.find_by(
   name: "juri",
   email: "juri@gmail.com",
   password: "juri1234",
-  # image: File.open("./app/assets/images/juri.jpg"),
-  image: File.open("public/juri.jpg"),
+  image: File.open("./app/assets/images/juri.jpg"),
 )
 
 
