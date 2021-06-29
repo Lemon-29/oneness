@@ -7,14 +7,14 @@
       stay homeでworkoutの環境ですら大きな変化がありました。
       1人でヨガをしていては誰もポーズをみてくれない、1人で続けていくモチベーション、
       同じシークエンスを一緒にやって生まれるあのスタジオの空間を取り戻すことができます。 <br>
-      また、オンラインになったこそ、ポーズの写真や日記などで振り返る時間ができて
+      また、オンラインになったこそ、ポーズの写真やお気に入りのポーズをブックマークして、振り返る時間ができて
       かつヨギーたちとのつながりを楽しむ、新しいヨガの様式を体験できます。<br>
 
 
       This app is for all yoga loves to be oneness
       When you do yoga by yourself ,  No one can see your yoga. Do you feel isolated ? No worries.<br>
-       Best App is For All YOGA Lovers here.
-       You can connct your favorite people, post your yoga pose and write your daily dialy as well, don't need to feel lonly anymore! Let's get started!!
+      Best App For All YOGA Lovers is here.
+      You can connct your favorite people, post your yoga pose and bookmark your favorite pictures as well, don't need to feel lonly anymore! Let's get started!!
 ## バージョン/version
 * Ruby2.6.5
 * Rails5.2.5
