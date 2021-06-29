@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      user: ユーザー
+      comment: コメント
+      admin: 管理者
+      favorite: お気に入り
+      relationship: お気に入り格納
+    attributes:
+      post:
+        content: 内容
+        image: 写真
+      user:
+        image: 写真
+        name: ニックネーム
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+      comment:
+        content: コメント
