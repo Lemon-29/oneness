@@ -10,62 +10,82 @@ RSpec.describe 'Admin', type: :system do
   # let!(:user2) { FactoryBot.create(:user2) }
   # let!(:user2) { FactoryBot.create(:user2) }
   describe '管理者機能' do
-    before do 
-      visit root_path
-      click_on "ログイン"
-      click_on '管理者ログイン'
-      click_on '管理者画面'
-    end
+    # before do 
+    #   visit root_path
+    #   click_on "ログイン"
+    #   click_on '管理者ログイン'
+    #   click_on '管理者画面'
+    # end
   
     context '管理者の場合,' do
       it '管理者ページにアクセスできて、投稿の削除ができる。' do
+        visit root_path
+        click_on "ログイン"
+        click_on '管理者ログイン'
+        click_on '管理者画面'
         expect(current_path).to eq rails_admin_path
-        first('.nav-pills').find_link('Post').click
-        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
-        click_on('Confirmation')
-        expect(page).to have_content 'translation missing: ja.admin.flash.successful'
+        first('.nav-pills').find_link('投稿').click
+        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('削除').click
+        click_on('実行する')
+        expect(page).to have_content '投稿の削除に成功しました'
       end
     end
     context '管理者の場合,' do
-      it '管理者のページにアクセスできて、お気に入りを削除することができる。' do
+      it '管理者のページにアクセスできて、お気に入りの削除することができる' do
+        visit root_path
+        click_on "ログイン"
+        click_on '管理者ログイン'
+        click_on '管理者画面'
         expect(current_path).to eq rails_admin_path
-        first('.nav-pills').find_link('Favorite').click
-        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(7)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
-        click_on('Confirmation')
-        expect(page).to have_content 'translation missing: ja.admin.flash.successful'
+        first('.nav-pills').find_link('お気に入り').click
+        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(7)').find(".list-inline").find_link('削除').click
+        click_on('実行する')
+        expect(page).to have_content 'お気に入りの削除に成功しました'
       end
     end
 
     context '管理者の場合,' do
-      it '管理者ページにアクセスできて投稿の編集ができる。' do
+      it '管理者ページにアクセスできて投稿の編集ができる' do
+        visit root_path
+        click_on "ログイン"
+        click_on '管理者ログイン'
+        click_on '管理者画面'
         expect(current_path).to eq rails_admin_path
-        first('.nav-pills').find_link('Post').click
-        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.edit.menu').click
+        first('.nav-pills').find_link('投稿').click
+        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
         find_by_id('post_content').set "編集しましたよ〜〜〜"
-        click_button 'Save'
-        expect(page).to have_content 'translation missing: ja.admin.flash.successful'
+        click_button '保存'
+        expect(page).to have_content '投稿の更新に成功しました'
       end
     end
 
     context '管理者の場合,' do
-      it '管理者ページにアクセスできて、コメントの編集ができる。' do
+      it '管理者ページにアクセスできて、コメントの編集ができる' do
+        visit root_path
+        click_on "ログイン"
+        click_on '管理者ログイン'
+        click_on '管理者画面'
         expect(current_path).to eq rails_admin_path
-        first('.nav-pills').find_link('Comment').click
-        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.edit.menu').click
+        first('.nav-pills').find_link('コメント').click
+        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('編集').click
         find_by_id('comment_content').set "I DID edit her comment!"
-        click_button 'Save'
-        expect(page).to have_content 'translation missing: ja.admin.flash.successful'
+        click_button '保存'
+        expect(page).to have_content 'コメントの更新に成功しました'
       end
     end
 
 
     context '管理者の場合,' do
       it '管理者ページにアクセスできてコメントの削除ができる。' do
+        visit root_path
+        click_on "ログイン"
+        click_on '管理者ログイン'
+        click_on '管理者画面'
         expect(current_path).to eq rails_admin_path
-        first('.nav-pills').find_link('Comment').click
-        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('Translation missing: ja.admin.actions.delete.menu').click
-        click_on('Confirmation')
-        expect(page).to have_content 'translation missing: ja.admin.flash.successful'
+        first('.nav-pills').find_link('コメント').click
+        find_by_id('list').find_by_id("bulk_form").find(".table-condensed").first('tr:nth-child(1) td:nth-child(9)').find(".list-inline").find_link('削除').click
+        click_on('実行する')
+        expect(page).to have_content 'コメントの削除に成功しました'
       end
     end
   end

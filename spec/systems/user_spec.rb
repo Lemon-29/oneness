@@ -23,12 +23,12 @@ RSpec.describe 'User関連機能',type: :system do
 
     context '入力漏れが合った場合' do
       it 'サインアップできない' do
-        click_on 'ログイン'
-        fill_in "user[name]", with: "may"
-        fill_in 'user[email]',with: 'may@yahoo.com'
-        fill_in 'user[password]', with: ''
-        click_button 'ログイン'
-        expect(page).to have_content "Eメール、名前またはパスワードが違います。"
+        click_on '新規登録'
+        fill_in 'user[password]',with: '000000'
+        fill_in "user[password_confirmation]", with: '000000'
+        click_on 'アカウント登録'
+        expect(page).to have_content "メールアドレスを入力してください"
+        expect(page).to have_content "ニックネームを入力してください"
       end
     end
     context '全ての入力が正しい場合' do
@@ -50,7 +50,7 @@ RSpec.describe 'User関連機能',type: :system do
         fill_in 'user[email]',with: 'lisa@gmail.com'
         fill_in 'user[password]', with: 'paris1234'
         click_button 'ログイン'
-        expect(page).to have_content 'Eメール、名前またはパスワードが違います。'
+        expect(page).to have_content 'メールアドレス、ニックネームまたはパスワードが違います。'
       end
     end
   end
