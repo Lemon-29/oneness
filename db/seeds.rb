@@ -40,7 +40,8 @@ user4 = User.find_by(
   name: "juri",
   email: "juri@gmail.com",
   password: "juri1234",
-  image: File.open("./app/assets/images/juri.jpg"),
+  # image: File.open("./app/assets/images/juri.jpg"),
+  image: File.open("public/juri.jpg"),
 )
 
 
@@ -102,7 +103,7 @@ post5_1 = Post.create!(
   user_id: user5.id,
 )
 post5_2 = Post.create!(
-  content: "headstand. I've been paracticing every single day",
+  content: "headstand. I've been paracticeing every single day",
   image: File.open("./app/assets/images/pose5-2.jpg"),
   user_id: user5.id,
 )
