@@ -1,10 +1,8 @@
 <div class="posts-index">
     <div class="pics">＿/＿/＿/<%= @user.name %>一覧画面＿/＿/＿/</div>
-    <%= link_to '🧘‍♀️新しく写真を投稿する🧘‍♀️', new_post_path%><br>
     <div class="posts-index_list">
         <%= render @posts %>
     </div>
 
 
-    <%= link_to 'マイページ', edit_user_registration_path(current_user.id) if current_user != nil%>
 </div>
