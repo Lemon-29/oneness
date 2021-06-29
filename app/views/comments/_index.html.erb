@@ -6,7 +6,7 @@
         <div class="profile_header-s">
           <%= image_tag(comment.user.image.url, class: 'user_profile-s') if comment.user.image.present? %>
           <div class="username-s">
-              <%= comment.user.name %> さんの投稿
+              <<%= comment.user.name %> さんの投稿
           </div>
         </div>
         <p class="text-break"><%= comment.content %></p>
