@@ -52,10 +52,10 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 
 
 ## ER_diagram
-<img src="./public/images/ER_diagram.png" alt=“ER図” width="650px">
-![Screen Shot 2021-06-25 at 2 04 57](https://user-images.githubusercontent.com/77761510/123360794-e188e800-d5a8-11eb-96a8-a539b8afd646.png)
+![Screen Shot 2021-06-25 at 2 04 57](https://user-images.githubusercontent.com/77761510/123853426-6765b400-d958-11eb-8b6b-c7bfa85f352d.png)
+
 
 ## 画面遷移図/Screen_flow_diagram
-<img src="./public/images/screen_flow_diagram.png" alt="画面遷移図" width="650px">
+![Screen Shot 2021-06-25 at 10 56 52](https://user-images.githubusercontent.com/77761510/123853490-79dfed80-d958-11eb-8154-03eee1856c21.png)
 
 
