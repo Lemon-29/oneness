@@ -3,6 +3,7 @@
 ## コンセプト/concept/ 
 #### ヨギーにのためのプラットフォーム/This app is for all yoga loves to be oneness 
 
+
       このアプリはヨギーにのためのプラットフォームです。<br>
       stay homeでworkoutの環境ですら大きな変化がありました。
       1人でヨガをしていては誰もポーズをみてくれない、1人で続けていくモチベーション、
@@ -13,16 +14,17 @@
 
       This app is for all yoga loves to be oneness
       When you do yoga by yourself ,  No one can see your yoga. Do you feel isolated ? No worries.<br>
+
       Best App For All YOGA Lovers is here.
       You can connct your favorite people, post your yoga pose and bookmark your favorite pictures as well, don't need to feel lonly anymore! Let's get started!!
 ## バージョン/version
+
 * Ruby2.6.5
 * Rails5.2.5
 * PostgreSQL13.3
 ## 機能一覧/list of functions
-* gameのCRUD機能(投稿・画像、編集、削除)
-* gameの作成・登録機能
-* gameのお気に入り機能
+* yogaのCRUD機能(投稿・画像、編集、削除)
+* yogaのお気に入り機能
 * お気に入り一覧表示機能
 * コメント機能
 * ユーザー登録機能
@@ -31,7 +33,7 @@
 * ゲストログイン機能
 * フォロー機能
 * 管理者権限機能
-* game検索機能
+* rating (評価機能）
 * Heroku
 ## 実行手順/how to proceed
 ````
@@ -48,11 +50,12 @@ https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHH
 ## ワイヤーフレーム/wire-flame
 https://docs.google.com/spreadsheets/d/1vd26jzxgAcfNBPxDwTgIRl1KDNvq_2KfB1jWiLHHc9Q/edit?usp=sharing
 
+
 ## ER_diagram
 <img src="./public/images/ER_diagram.png" alt=“ER図” width="650px">
 ![Screen Shot 2021-06-25 at 2 04 57](https://user-images.githubusercontent.com/77761510/123360794-e188e800-d5a8-11eb-96a8-a539b8afd646.png)
 
 ## 画面遷移図/Screen_flow_diagram
 <img src="./public/images/screen_flow_diagram.png" alt="画面遷移図" width="650px">
-![Screen Shot 2021-06-25 at 10 56 52](https://user-images.githubusercontent.com/77761510/123360744-ca49fa80-d5a8-11eb-96e1-d112d06e4e22.png)
+
 
